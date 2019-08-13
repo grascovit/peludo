@@ -1,0 +1,11 @@
+language: ruby
+cache:
+  bundler: true
+  yarn: true
+addons:
+  postgresql: '9.6'
+before_script:
+  - yarn
+  - bundle exec rake db:setup
+script:
+  - bundle exec rspec
