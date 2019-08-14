@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      pet:
+        one: "Pet"
+        other: "Pets"
+    attributes:
+      pet:
+        name: "Name"
+        age: "Age"
+        gender: "Gender"
+        breed: "Breed"
+        description: "Description"
+        user: "User"
+        situation: "Situation"
+        city: "City"
+        state: "State"
+        country: "Country"
