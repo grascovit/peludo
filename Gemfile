@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'aws-sdk-s3', '~> 1.46.0', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.6.2'
