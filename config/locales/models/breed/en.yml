@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      breed:
+        one: "Breed"
+        other: "Breeds"
+    attributes:
+      breed:
+        name: "Name"
