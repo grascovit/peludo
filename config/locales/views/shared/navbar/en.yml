@@ -1,0 +1,6 @@
+en:
+  shared:
+    navbar:
+      app_name: "Where is my pet?"
+      edit_profile: "Edit profile"
+      sign_out: "Sign out"

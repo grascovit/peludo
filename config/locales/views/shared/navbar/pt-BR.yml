@@ -1,0 +1,6 @@
+pt-BR:
+  shared:
+    navbar:
+      app_name: "Onde está meu pet?"
+      edit_profile: "Editar perfil"
+      sign_out: "Sair"
