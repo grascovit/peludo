@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/grascovit/where_is_my_pet.svg?token=eayXJNrAe9LbNAcpFGsz&branch=master)](https://travis-ci.com/grascovit/where_is_my_pet)
+[![Build Status](https://travis-ci.com/grascovit/where-is-my-pet.svg?token=eayXJNrAe9LbNAcpFGsz&branch=master)](https://travis-ci.com/grascovit/where-is-my-pet)
 
 # Where is my pet?
 
