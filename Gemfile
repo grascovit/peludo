@@ -10,6 +10,7 @@ gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.6.2'
 gem 'figaro', '~> 1.1.1'
+gem 'font-awesome-rails', '~> 4.7.0.5'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'mini_magick', '~> 4.9.5'
 gem 'pg', '~> 1.1.4'
