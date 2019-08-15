@@ -4,7 +4,7 @@ class LostPetsController < ApplicationController
   before_action :fetch_pet, only: %i[show edit update destroy]
 
   def index
-    @pets = Pet.where(situation: :lost)
+    @pets = Pet.where(situation: :lost).decorate
   end
 
   def show; end
@@ -41,7 +41,7 @@ class LostPetsController < ApplicationController
   private
 
   def fetch_pet
-    @pet = current_user.lost_pets.find(params[:id])
+    @pet = current_user.lost_pets.find(params[:id]).decorate
   end
 
   def pet_params

@@ -13,10 +13,10 @@
       <div class="card-deck">
         <% pets.each do |pet| %>
           <%= link_to lost_pet_path(pet), class: 'card pet-card' do %>
-            <img src="<%= url_for(pet.pictures.first) %>" class="card-img-top img-fluid pet-image" alt="<%= t('.lost_pet_alt') %>">
+            <img src="<%= pet.picture_url %>" class="card-img-top img-fluid pet-image" alt="<%= t('.lost_pet_alt') %>">
             <div class="card-body">
               <h4 class="pet-header text-center">
-                <%= pet.breed ? pet.breed.name : t('lost_pets.shared.no_breed_informed') %>
+                <%= pet.breed %>
               </h4>
               <h5 class="pet-city">
                 <%= pet.city %>

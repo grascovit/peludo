@@ -15,7 +15,7 @@
         </p>
         <label><%= t('activerecord.attributes.pet.breed') %></label>
         <p class="pet-info">
-          <%= @pet.breed ? @pet.breed.name : t('lost_pets.shared.no_breed_informed') %>
+          <%= @pet.breed %>
         </p>
         <label><%= t('activerecord.attributes.pet.gender') %></label>
         <p class="pet-info">
