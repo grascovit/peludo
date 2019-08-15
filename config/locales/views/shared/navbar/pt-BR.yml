@@ -4,3 +4,5 @@ pt-BR:
       app_name: "Onde está meu pet?"
       edit_profile: "Editar perfil"
       sign_out: "Sair"
+      lost_pets: "Pets perdidos"
+      found_pets: "Pets encontrados"

@@ -9,10 +9,16 @@ en:
         name: "Name"
         age: "Age"
         gender: "Gender"
+        genders:
+          male: "Male"
+          female: "Female"
         breed: "Breed"
         description: "Description"
         user: "User"
         situation: "Situation"
+        situations:
+          found: "Found"
+          lost: "Lost"
         city: "City"
         state: "State"
         country: "Country"

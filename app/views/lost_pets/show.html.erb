@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col mx-auto">
+    <div class="row my-4">
+      <div class="col">
+        <% @pet.pictures.each do |picture| %>
+          <%= link_to url_for(picture), target: '_blank' do %>
+            <%= image_tag url_for(picture), class: 'pet-img' %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col">
+        <label><%= t('activerecord.attributes.pet.name') %></label>
+        <p class="pet-info">
+          <%= @pet.name.presence || t('.no_name_informed') %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.breed') %></label>
+        <p class="pet-info">
+          <%= @pet.breed ? @pet.breed.name : t('lost_pets.shared.no_breed_informed') %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.gender') %></label>
+        <p class="pet-info">
+          <%= t("activerecord.attributes.pet.genders.#{@pet.gender}") %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.description') %></label>
+        <p class="pet-info">
+          <%= @pet.description %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.city') %></label>
+        <p class="pet-info">
+          <%= @pet.city %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.state') %></label>
+        <p class="pet-info">
+          <%= @pet.state %>
+        </p>
+        <label><%= t('activerecord.attributes.pet.country') %></label>
+        <p class="pet-info">
+          <%= @pet.country %>
+        </p>
+        <label><%= t('.registered_at') %></label>
+        <p class="pet-info">
+          <%= l(@pet.created_at, format: :long) %>
+        </p>
+      </div>
+      <%= link_to t('.back'), lost_pets_path, class: 'btn btn-sm btn-block btn-link mt-5' %>
+    </div>
+  </div>
+</div>

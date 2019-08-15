@@ -1,0 +1,57 @@
+.btn-lost-my-pet {
+  .lost-pet-icon {
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-top: -2px;
+    font-size: 1.1rem;
+  }
+}
+
+.pet-card {
+  margin-top: 2em;
+  width: 18em;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .pet-image {
+    height: 100%;
+  }
+
+  .pet-header {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .pet-city {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .pet-description {
+    text-align: justify;
+  }
+
+  .pet-registered-at {
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+label {
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+.pet-info {
+  margin-bottom: 1.5em;
+}
+
+.pet-img {
+  margin: 0 0.2em;
+  width: 160px;
+  height: 160px;
+  border-radius: 0.3em;
+}

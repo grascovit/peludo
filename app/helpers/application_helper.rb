@@ -9,4 +9,8 @@ module ApplicationHelper
   def flash_class(type)
     FLASH_TYPES[type.to_sym]
   end
+
+  def active_item(name)
+    'active' if name == controller_name
+  end
 end

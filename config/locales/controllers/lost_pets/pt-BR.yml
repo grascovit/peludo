@@ -1,0 +1,8 @@
+pt-BR:
+  lost_pets:
+    create:
+      success: "Pet cadastrado com sucesso"
+    update:
+      success: "Pet atualizado com sucesso"
+    destroy:
+      success: "Pet removido do banco de dados com sucesso"

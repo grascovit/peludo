@@ -1,0 +1,22 @@
+en:
+  lost_pets:
+    show:
+      header: "Lost pet"
+      back: "Back to lost pets"
+      no_name_informed: "Name not informed"
+      registered_at: "Registered at"
+    edit:
+      header: "Edit pet"
+      back: "Back to lost pets"
+    new:
+      header: "Register new lost pet"
+      back: "Back to lost pets"
+    form:
+      submit: "Submit"
+    index:
+      header: "Lost pets"
+      register_new: "I've lost my pet"
+      registered_at: "Registered on %{datetime}"
+      lost_pet_alt: "Lost pet"
+    shared:
+      no_breed_informed: "Breed not informed"

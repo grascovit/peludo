@@ -1,0 +1,60 @@
+# frozen_string_literal: true
+
+class LostPetsController < ApplicationController
+  before_action :fetch_pet, only: %i[show edit update destroy]
+
+  def index
+    @pets = Pet.where(situation: :lost)
+  end
+
+  def show; end
+
+  def new
+    @pet = current_user.lost_pets.build
+  end
+
+  def create
+    @pet = current_user.lost_pets.new(pet_params)
+    @pet.situation = :lost
+
+    if @pet.save
+      redirect_to lost_pets_path, notice: t('.success')
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @pet.update(pet_params)
+      redirect_to lost_pets_path, notice: t('.success')
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @pet.destroy
+
+    redirect_to recipient_lists_path, notice: t('.success')
+  end
+
+  private
+
+  def fetch_pet
+    @pet = current_user.lost_pets.find(params[:id])
+  end
+
+  def pet_params
+    params.require(:pet).permit(
+      :name,
+      :age,
+      :breed_id,
+      :gender,
+      :description,
+      :city,
+      :state,
+      :country,
+      pictures: []
+    )
+  end
+end

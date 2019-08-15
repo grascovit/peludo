@@ -1,0 +1,22 @@
+pt-BR:
+  lost_pets:
+    show:
+      header: "Pet perdido"
+      back: "Voltar aos pets perdidos"
+      no_name_informed: "Nome não informado"
+      registered_at: "Cadastrado em"
+    edit:
+      header: "Atualizar pet perdido"
+      back: "Voltar aos pets perdidos"
+    new:
+      header: "Cadastrar pet perdido"
+      back: "Voltar aos pets perdidos"
+    form:
+      submit: "Salvar"
+    index:
+      header: "Pets perdidos"
+      register_new: "Perdi meu pet"
+      registered_at: "Cadastrado em %{datetime}"
+      lost_pet_alt: "Pet perdido"
+    shared:
+      no_breed_informed: "Raça não informada"

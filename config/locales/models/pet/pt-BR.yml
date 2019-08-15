@@ -9,10 +9,16 @@ pt-BR:
         name: "Nome"
         age: "Idade"
         gender: "Sexo"
+        genders:
+          male: "Macho"
+          female: "Fêmea"
         breed: "Raça"
         description: "Descrição"
         user: "Usuário"
         situation: "Situação"
+        situations:
+          found: "Encontrado"
+          lost: "Perdido"
         city: "Cidade"
         state: "Estado"
         country: "País"
