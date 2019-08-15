@@ -4,7 +4,7 @@
       <div class="col">
         <% @pet.pictures.each do |picture| %>
           <%= link_to url_for(picture), target: '_blank' do %>
-            <%= image_tag url_for(picture), class: 'pet-img' %>
+            <%= image_tag url_for(picture), class: 'pet-img-thumbnail' %>
           <% end %>
         <% end %>
       </div>

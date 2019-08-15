@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
 class LostPetsController < ApplicationController
-  before_action :fetch_pet, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :fetch_pet, only: %i[edit update destroy]
 
   def index
     @pets = Pet.where(situation: :lost).decorate
   end
 
-  def show; end
+  def show
+    @pet = Pet.find(params[:id]).decorate
+  end
 
   def new
     @pet = current_user.lost_pets.build

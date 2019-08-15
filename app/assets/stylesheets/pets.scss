@@ -11,13 +11,14 @@
   margin-top: 2em;
   width: 18em;
   color: inherit;
+  max-width: 320px;
 
   &:hover {
     text-decoration: none;
   }
 
   .pet-image {
-    height: 100%;
+    height: 320px;
   }
 
   .pet-header {
@@ -49,9 +50,23 @@ label {
   margin-bottom: 1.5em;
 }
 
-.pet-img {
+.pet-img-thumbnail {
   margin: 0 0.2em;
   width: 160px;
   height: 160px;
   border-radius: 0.3em;
+}
+
+@media (max-width: 991px) {
+  .pet-card {
+    .pet-image {
+      max-height: 220px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .card-deck {
+    align-items: center;
+  }
 }
