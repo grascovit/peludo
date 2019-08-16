@@ -35,18 +35,21 @@
   <div class="form-group">
     <%= form.text_field :city,
                         autocomplete: 'on',
+                        required: true,
                         placeholder: t('activerecord.attributes.pet.city'),
                         class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= form.text_field :state,
                         autocomplete: 'on',
+                        required: true,
                         placeholder: t('activerecord.attributes.pet.state'),
                         class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= form.text_field :country,
                         autocomplete: 'on',
+                        required: true,
                         placeholder: t('activerecord.attributes.pet.country'),
                         class: 'form-control' %>
   </div>
