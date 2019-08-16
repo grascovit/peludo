@@ -5,7 +5,7 @@ class LostPetsController < ApplicationController
   before_action :fetch_pet, only: %i[edit update destroy]
 
   def index
-    @pets = Pet.where(situation: :lost).decorate
+    @pets = Pet.with_attached_pictures.where(situation: :lost).decorate
   end
 
   def show
