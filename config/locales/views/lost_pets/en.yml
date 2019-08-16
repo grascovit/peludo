@@ -21,6 +21,5 @@ en:
       header: "Lost pets"
       register_new: "I've lost my pet"
       registered_at: "Registered on %{datetime}"
-      lost_pet_alt: "Lost pet"
     shared:
       no_breed_informed: "Breed not informed"

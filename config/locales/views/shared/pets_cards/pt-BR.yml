@@ -1,0 +1,5 @@
+pt-BR:
+  shared:
+    pet_card:
+      pet_picture_alt: "Foto do pet"
+      registered_at: "Cadastrado em %{datetime}"

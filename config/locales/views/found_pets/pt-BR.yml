@@ -19,7 +19,5 @@ pt-BR:
     index:
       header: "Pets encontrados"
       register_new: "Encontrei um pet"
-      registered_at: "Cadastrado em %{datetime}"
-      found_pet_alt: "Pet encontrado"
     shared:
       no_breed_informed: "Raça não informada"

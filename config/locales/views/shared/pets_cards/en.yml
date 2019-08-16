@@ -1,0 +1,5 @@
+en:
+  shared:
+    pet_card:
+      pet_picture_alt: "Pet picture"
+      registered_at: "Registered on %{datetime}"

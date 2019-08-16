@@ -11,7 +11,5 @@ en:
     index:
       header: "Found pets"
       register_new: "I've found a pet"
-      registered_at: "Registered on %{datetime}"
-      found_pet_alt: "Found pet"
     shared:
       no_breed_informed: "Breed not informed"

@@ -20,7 +20,5 @@ pt-BR:
     index:
       header: "Pets perdidos"
       register_new: "Perdi meu pet"
-      registered_at: "Cadastrado em %{datetime}"
-      lost_pet_alt: "Pet perdido"
     shared:
       no_breed_informed: "Raça não informada"
