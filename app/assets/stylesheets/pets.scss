@@ -78,10 +78,24 @@ label.bold {
   }
 }
 
+@media (max-width: 1199px) {
+  .pet-actions {
+    .btn-pet-actions {
+      min-width: 70%;
+    }
+  }
+}
+
 @media (max-width: 991px) {
   .pet-card {
     .pet-image {
       max-height: 220px;
+    }
+  }
+
+  .pet-actions {
+    .btn-pet-actions {
+      min-width: 100%;
     }
   }
 }

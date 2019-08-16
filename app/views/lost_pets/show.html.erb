@@ -47,14 +47,14 @@
       <div class="col pet-actions">
         <%= link_to t('.edit'),
                     edit_lost_pet_path(@pet),
-                    class: 'btn btn-primary btn-pet-actions' %>
+                    class: 'btn btn-sm btn-primary btn-pet-actions' %>
         <%= link_to t('.delete'),
                     lost_pet_path(@pet),
                     data: { confirm: t('.confirmation_message') },
-                    method: :delete, class: 'btn btn-danger btn-pet-actions' %>
+                    method: :delete, class: 'btn btn-sm btn-danger btn-pet-actions' %>
         <%= link_to t('.back'),
                     lost_pets_path,
-                    class: 'btn btn-link btn-pet-actions' %>
+                    class: 'btn btn-sm btn-link btn-pet-actions' %>
       </div>
     </div>
   </div>
