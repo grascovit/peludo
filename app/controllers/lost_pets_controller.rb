@@ -38,7 +38,7 @@ class LostPetsController < ApplicationController
   def destroy
     @pet.destroy
 
-    redirect_to recipient_lists_path, notice: t('.success')
+    redirect_to lost_pets_path, notice: t('.success')
   end
 
   private
