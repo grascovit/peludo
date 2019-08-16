@@ -1,0 +1,8 @@
+en:
+  found_pets:
+    create:
+      success: "Pet successfully registered"
+    update:
+      success: "Pet successfully updated"
+    destroy:
+      success: "Pet successfully removed from our database"

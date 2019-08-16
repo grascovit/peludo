@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col">
+    <div class="mt-4 text-center">
+      <h4>
+        <%= t('.header') %>
+      </h4>
+      <%= link_to new_found_pet_path, class: 'btn btn-sm btn-primary btn-found-a-pet mt-3' do %>
+        <%= t('.register_new') %>
+        <i class="fas fa-laugh-beam found-pet-icon"></i>
+      <% end %>
+    </div>
+    <% @pets.each_slice(3) do |pets| %>
+      <div class="card-deck">
+        <% pets.each do |pet| %>
+          <%= link_to found_pet_path(pet), class: 'card pet-card' do %>
+            <img src="<%= pet.picture_url %>" class="card-img-top img-fluid pet-image" alt="<%= t('.found_pet_alt') %>">
+            <div class="card-body">
+              <h4 class="pet-header text-center">
+                <%= pet.safe_breed %>
+              </h4>
+              <h5 class="pet-city">
+                <%= pet.city %>
+              </h5>
+              <p class="pet-description">
+                <%= truncate(pet.safe_description, length: 70) %>
+              </p>
+            </div>
+            <p class="card-footer pet-registered-at">
+              <small class="text-muted">
+                <%= t('.registered_at', datetime: l(pet.created_at, format: :short)) %>
+              </small>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

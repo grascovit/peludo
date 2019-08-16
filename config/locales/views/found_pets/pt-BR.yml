@@ -1,8 +1,7 @@
 pt-BR:
-  lost_pets:
+  found_pets:
     show:
-      header: "Pet perdido"
-      back: "Voltar aos pets perdidos"
+      back: "Voltar aos pets encontrados"
       no_name_informed: "Nome não informado"
       no_gender_informed: "Sexo não informado"
       no_description_given: "Nenhuma descrição fornecida"
@@ -10,17 +9,17 @@ pt-BR:
       delete: "Remover pet do banco de dados"
       confirmation_message: "Você tem certeza?"
     edit:
-      header: "Atualizar pet perdido"
-      back: "Voltar aos pets perdidos"
+      header: "Atualizar pet encontrado"
+      back: "Voltar aos pets encontrados"
     new:
-      header: "Cadastrar pet perdido"
-      back: "Voltar aos pets perdidos"
+      header: "Cadastrar pet encontrado"
+      back: "Voltar aos pets encontrados"
     form:
       submit: "Salvar"
     index:
-      header: "Pets perdidos"
-      register_new: "Perdi meu pet"
+      header: "Pets encontrados"
+      register_new: "Encontrei um pet"
       registered_at: "Cadastrado em %{datetime}"
-      lost_pet_alt: "Pet perdido"
+      found_pet_alt: "Pet encontrado"
     shared:
       no_breed_informed: "Raça não informada"

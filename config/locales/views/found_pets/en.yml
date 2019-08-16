@@ -1,0 +1,17 @@
+en:
+  found_pets:
+    edit:
+      header: "Edit pet"
+      back: "Back to found pets"
+    new:
+      header: "Register new found pet"
+      back: "Back to found pets"
+    form:
+      submit: "Submit"
+    index:
+      header: "Found pets"
+      register_new: "I've found a pet"
+      registered_at: "Registered on %{datetime}"
+      found_pet_alt: "Found pet"
+    shared:
+      no_breed_informed: "Breed not informed"

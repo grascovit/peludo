@@ -1,0 +1,41 @@
+<div class="col pet-pictures">
+  <% pet.pictures.each do |picture| %>
+    <%= link_to url_for(picture), target: '_blank' do %>
+      <%= image_tag url_for(picture), class: 'pet-img-thumbnail' %>
+    <% end %>
+  <% end %>
+</div>
+<div class="col pet-details">
+  <label class="bold"><%= t('activerecord.attributes.pet.name') %></label>
+  <p class="pet-info">
+    <%= pet.safe_name %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.breed') %></label>
+  <p class="pet-info">
+    <%= pet.safe_breed %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.gender') %></label>
+  <p class="pet-info">
+    <%= pet.safe_gender %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.description') %></label>
+  <p class="pet-info">
+    <%= pet.safe_description %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.city') %></label>
+  <p class="pet-info">
+    <%= pet.city %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.state') %></label>
+  <p class="pet-info">
+    <%= pet.state %>
+  </p>
+  <label class="bold"><%= t('activerecord.attributes.pet.country') %></label>
+  <p class="pet-info">
+    <%= pet.country %>
+  </p>
+  <label class="bold"><%= t('.registered_at') %></label>
+  <p class="pet-info">
+    <%= l(pet.created_at, format: :long) %>
+  </p>
+</div>

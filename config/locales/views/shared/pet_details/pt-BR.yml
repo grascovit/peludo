@@ -1,0 +1,4 @@
+pt-BR:
+  shared:
+    pet_details:
+      registered_at: "Cadastrado em"

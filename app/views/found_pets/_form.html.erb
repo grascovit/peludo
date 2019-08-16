@@ -8,11 +8,6 @@
                         class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= form.number_field :age,
-                          placeholder: t('activerecord.attributes.pet.age'),
-                          class: 'form-control' %>
-  </div>
-  <div class="form-group">
     <%= form.collection_select :breed_id,
                                Breed.all,
                                :id,

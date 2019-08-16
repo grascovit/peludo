@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :lost_pets
+  resources :found_pets
 end
