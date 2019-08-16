@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     <%= form.collection_select :breed_id,
-                               Breed.all,
+                               Breed.sorted_by_name(:asc),
                                :id,
                                :name,
                                { include_blank: t('activerecord.attributes.pet.breed') },
