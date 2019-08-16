@@ -47,7 +47,7 @@ class LostPetsController < ApplicationController
     @pet = current_user.lost_pets.find(params[:id]).decorate
   end
 
-  def pet_params
+  def pet_params # rubocop:disable Metrics/MethodLength
     params.require(:pet).permit(
       :name,
       :age,
