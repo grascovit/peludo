@@ -4,7 +4,12 @@ en:
       header: "Lost pet"
       back: "Back to lost pets"
       no_name_informed: "Name not informed"
+      no_gender_informed: "Gender not informed"
+      no_description_given: "No description given"
       registered_at: "Registered at"
+      edit: "Edit pet details"
+      delete: "Remove pet from database"
+      confirmation_message: "Are you sure?"
     edit:
       header: "Edit pet"
       back: "Back to lost pets"

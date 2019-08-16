@@ -3,8 +3,26 @@
 require 'rails_helper'
 
 RSpec.describe PetDecorator do
-  describe '#breed' do
-    subject { pet.breed }
+  describe '#safe_name' do
+    subject { pet.safe_name }
+
+    let(:pet) { build_stubbed(:pet, name: name).decorate }
+
+    context 'when pet has a name' do
+      let(:name) { 'Rex' }
+
+      it { is_expected.to eq('Rex') }
+    end
+
+    context 'when pet has no name' do
+      let(:name) { '' }
+
+      it { is_expected.to eq(I18n.t('lost_pets.show.no_name_informed')) }
+    end
+  end
+
+  describe '#safe_breed' do
+    subject { pet.safe_breed }
 
     let(:pet) { build_stubbed(:pet, breed: breed).decorate }
 
@@ -18,6 +36,42 @@ RSpec.describe PetDecorator do
       let(:breed) { nil }
 
       it { is_expected.to eq(I18n.t('lost_pets.shared.no_breed_informed')) }
+    end
+  end
+
+  describe '#safe_gender' do
+    subject { pet.safe_gender }
+
+    let(:pet) { build_stubbed(:pet, gender: gender).decorate }
+
+    context 'when pet has a gender' do
+      let(:gender) { 'male' }
+
+      it { is_expected.to eq(I18n.t('activerecord.attributes.pet.genders.male')) }
+    end
+
+    context 'when pet has no gender' do
+      let(:gender) { '' }
+
+      it { is_expected.to eq(I18n.t('lost_pets.show.no_gender_informed')) }
+    end
+  end
+
+  describe '#safe_description' do
+    subject { pet.safe_description }
+
+    let(:pet) { build_stubbed(:pet, description: description).decorate }
+
+    context 'when pet has a description' do
+      let(:description) { 'Description' }
+
+      it { is_expected.to eq('Description') }
+    end
+
+    context 'when pet has no description' do
+      let(:description) { '' }
+
+      it { is_expected.to eq(I18n.t('lost_pets.show.no_description_given')) }
     end
   end
 
