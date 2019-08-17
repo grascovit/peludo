@@ -8,8 +8,7 @@
         <%= t('.subheader') %><span class="emoji">&#129488;</span>
       </h6>
       <%= link_to new_found_pet_path, class: 'btn btn-sm btn-primary btn-found-a-pet mt-3' do %>
-        <%= t('.register_new') %>
-        <i class="fas fa-laugh-beam found-pet-icon"></i>
+        <%= t('.register_new') %><span class="emoji emoji-sm">&#128525;</span>
       <% end %>
     </div>
     <% @pets.each_slice(3) do |pets| %>

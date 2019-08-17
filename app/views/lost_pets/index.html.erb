@@ -5,11 +5,10 @@
         <%= t('.header') %>
       </h4>
       <h6>
-        <%= t('.subheader') %><span class="emoji">&#128531;</span>
+        <%= t('.subheader') %><span class="emoji">&#128532;</span>
       </h6>
       <%= link_to new_lost_pet_path, class: 'btn btn-sm btn-primary btn-lost-my-pet mt-3' do %>
-        <%= t('.register_new') %>
-        <i class="fas fa-heart-broken lost-pet-icon"></i>
+        <%= t('.register_new') %><span class="emoji emoji-sm">&#128531;</span>
       <% end %>
     </div>
     <% @pets.each_slice(3) do |pets| %>
