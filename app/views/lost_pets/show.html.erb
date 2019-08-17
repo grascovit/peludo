@@ -13,6 +13,10 @@
                       lost_pet_path(@pet),
                       data: { confirm: t('.confirmation_message') },
                       method: :delete, class: 'btn btn-sm btn-danger btn-pet-actions' %>
+        <% elsif current_user %>
+          <%= link_to t('.see_contact_info'),
+                      '#',
+                      class: 'btn btn-sm btn-primary btn-pet-actions' %>
         <% end %>
         <%= link_to t('.back'),
                     lost_pets_path,

@@ -5,6 +5,7 @@ pt-BR:
       no_name_informed: "Nome não informado"
       no_gender_informed: "Sexo não informado"
       no_description_given: "Nenhuma descrição fornecida"
+      see_contact_info: "Ver informações de contato"
       edit: "Atualizar informações do pet"
       delete: "Remover pet do banco de dados"
       confirmation_message: "Você tem certeza?"

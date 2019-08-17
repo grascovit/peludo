@@ -3,6 +3,7 @@ en:
     navbar:
       app_name: "Where is my pet?"
       edit_profile: "Edit profile"
+      sign_in: "Sign in"
       sign_out: "Sign out"
       lost_pets: "Lost pets"
       found_pets: "Found pets"
