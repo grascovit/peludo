@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_125339) do
+ActiveRecord::Schema.define(version: 2019_08_17_043327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2019_08_14_125339) do
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contact_logs", force: :cascade do |t|
+    t.bigint "requesting_user_id"
+    t.bigint "requested_user_id"
+    t.bigint "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_contact_logs_on_pet_id"
+    t.index ["requested_user_id"], name: "index_contact_logs_on_requested_user_id"
+    t.index ["requesting_user_id"], name: "index_contact_logs_on_requesting_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -85,6 +96,9 @@ ActiveRecord::Schema.define(version: 2019_08_14_125339) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contact_logs", "pets"
+  add_foreign_key "contact_logs", "users", column: "requested_user_id"
+  add_foreign_key "contact_logs", "users", column: "requesting_user_id"
   add_foreign_key "pets", "breeds"
   add_foreign_key "pets", "users"
 end

@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      contact_log:
+        one: "Contact log"
+        other: "Contact logs"
+    attributes:
+      contact_log:
+        requesting_user: "Requesting user"
+        requested_user: "Requested user"
+        pet: "Pet"
