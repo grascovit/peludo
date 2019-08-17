@@ -34,10 +34,10 @@ RSpec.describe 'Users', type: :request do
         end.to change(User, :count).by(1)
       end
 
-      it 'redirects to the login page' do
+      it 'redirects to the root page' do
         post user_registration_path, params: valid_attributes
 
-        expect(response).to redirect_to(unauthenticated_root_path)
+        expect(response).to redirect_to(root_path)
       end
     end
 
