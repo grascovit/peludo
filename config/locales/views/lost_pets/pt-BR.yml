@@ -19,6 +19,7 @@ pt-BR:
       submit: "Salvar"
     index:
       header: "Pets perdidos"
+      subheader: "Infelizmente os bichinhos abaixo estão desaparecidos. Por favor, nos ajude a encontrá-los"
       register_new: "Perdi meu pet"
     shared:
       no_breed_informed: "Raça não informada"

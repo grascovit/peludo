@@ -19,6 +19,7 @@ en:
       submit: "Submit"
     index:
       header: "Lost pets"
+      subheader: "Unfortunately the pets below are lost. Please help us find them"
       register_new: "I've lost my pet"
     shared:
       no_breed_informed: "Breed not informed"

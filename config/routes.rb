@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'lost_pets#index', as: :authenticated_root
+      root to: 'found_pets#index', as: :authenticated_root
     end
 
     unauthenticated :user do
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   resources :lost_pets
   resources :found_pets
+  resources :contact_logs, only: %i[create show]
 end

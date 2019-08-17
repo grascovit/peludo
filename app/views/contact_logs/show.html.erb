@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col">
+    <div class="mt-4 text-center">
+      <h4>
+        <%= t('.header') %>
+      </h4>
+      <div class="mt-4">
+        <label class="bold"><%= t('activerecord.attributes.user.first_name') %></label>
+        <p>
+          <%= @contact_log.requested_user.first_name %>
+        </p>
+        <label class="bold"><%= t('activerecord.attributes.user.phone_number') %></label>
+        <p>
+          <%= @contact_log.requested_user.phone_number %>
+        </p>
+        <%= link_to t('.back'),
+                    @contact_log.pet.decorate.path,
+                    class: 'btn btn-sm btn-link btn-pet-actions' %>
+      </div>
+    </div>
+  </div>
+</div>

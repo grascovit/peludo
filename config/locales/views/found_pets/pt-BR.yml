@@ -19,6 +19,7 @@ pt-BR:
       submit: "Salvar"
     index:
       header: "Pets encontrados"
+      subheader: "Os bichinhos abaixo foram encontrados e estão à procura do seu tutor/tutora"
       register_new: "Encontrei um pet"
     shared:
       no_breed_informed: "Raça não informada"

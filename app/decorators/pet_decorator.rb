@@ -26,4 +26,8 @@ class PetDecorator < Draper::Decorator
   def picture_url
     h.url_for(object.pictures.first)
   end
+
+  def path
+    object.lost? ? h.lost_pet_path(object) : h.found_pet_path(object)
+  end
 end
