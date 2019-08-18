@@ -13,7 +13,7 @@ require 'sprockets/railtie'
 
 Bundler.require(*Rails.groups)
 
-module WhereIsMyPet
+module Peludo
   class Application < Rails::Application
     config.load_defaults 5.2
     config.generators.system_tests = nil

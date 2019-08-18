@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: where_is_my_pet_development
+  database: peludo_development
 
 test:
   <<: *default
-  database: where_is_my_pet_test
+  database: peludo_test
 
 production:
   <<: *default
-  database: where_is_my_pet_production
-  username: where_is_my_pet
-  password: <%= ENV['WHERE_IS_MY_PET_DATABASE_PASSWORD'] %>
+  database: peludo_production
+  username: peludo
+  password: <%= ENV['PELUDO_DATABASE_PASSWORD'] %>

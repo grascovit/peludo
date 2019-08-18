@@ -1,7 +1,7 @@
 en:
   shared:
     navbar:
-      app_name: "Where is my pet?"
+      app_name: "Peludo"
       edit_profile: "Edit profile"
       sign_in: "Sign in"
       sign_out: "Sign out"

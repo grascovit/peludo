@@ -1,7 +1,7 @@
 pt-BR:
   shared:
     navbar:
-      app_name: "Onde está meu pet?"
+      app_name: "Peludo"
       edit_profile: "Editar perfil"
       sign_in: "Entrar"
       sign_out: "Sair"

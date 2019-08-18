@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/grascovit/where-is-my-pet.svg?token=eayXJNrAe9LbNAcpFGsz&branch=master)](https://travis-ci.com/grascovit/where-is-my-pet)
+[![Build Status](https://travis-ci.com/grascovit/peludo.svg?token=eayXJNrAe9LbNAcpFGsz&branch=master)](https://travis-ci.com/grascovit/peludo)
 
-# Where is my pet?
+# Peludo
 
-"Where is my pet?" is a web application that helps people find their pets. The main idea is to centralize information about lost and found pets.
+Peludo is a web application that helps people find their pets. The main idea is to centralize information about lost and found pets.
 
 #### Requirements
 - Ruby 2.6.3
