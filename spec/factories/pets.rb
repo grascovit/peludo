@@ -7,9 +7,9 @@ FactoryBot.define do
     gender { Pet.genders.keys.sample }
     description { Faker::Lorem.paragraph }
     situation { Pet.situations.keys.sample }
-    city { Faker::Address.city }
-    state { Faker::Address.state }
-    country { Faker::Address.country }
+    address { Faker::Address.full_address }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
     breed
     user
   end

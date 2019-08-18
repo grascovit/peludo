@@ -33,30 +33,21 @@
                        class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= form.text_field :city,
-                        autocomplete: 'on',
-                        required: true,
-                        placeholder: t('activerecord.attributes.pet.city'),
-                        class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.text_field :state,
-                        autocomplete: 'on',
-                        required: true,
-                        placeholder: t('activerecord.attributes.pet.state'),
-                        class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.text_field :country,
-                        autocomplete: 'on',
-                        required: true,
-                        placeholder: t('activerecord.attributes.pet.country'),
-                        class: 'form-control' %>
-  </div>
-  <div class="form-group">
     <%= form.file_field :pictures, multiple: true, required: pet.pictures.empty? %>
   </div>
+  <div class="form-group">
+    <%= form.text_field :address,
+                        autocomplete: 'off',
+                        required: true,
+                        placeholder: t('activerecord.attributes.pet.address'),
+                        class: 'form-control' %>
+  </div>
+  <%= form.hidden_field :latitude %>
+  <%= form.hidden_field :longitude %>
+  <div id="pet-map"></div>
   <div class="form-group mt-4">
     <%= form.submit t('.submit'), class: 'btn btn-sm btn-primary btn-block' %>
   </div>
 <% end %>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initializeLocationServices"></script>

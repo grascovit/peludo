@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 2019_08_17_043327) do
     t.text "description"
     t.bigint "user_id"
     t.integer "situation"
-    t.string "city", default: "", null: false
-    t.string "state", default: "", null: false
-    t.string "country", default: "", null: false
+    t.string "address", default: "", null: false
+    t.string "latitude", default: "", null: false
+    t.string "longitude", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["breed_id"], name: "index_pets_on_breed_id"

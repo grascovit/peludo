@@ -19,6 +19,6 @@ pt-BR:
         situations:
           found: "Encontrado"
           lost: "Perdido"
-        city: "Cidade"
-        state: "Estado"
-        country: "País"
+        address: "Endereço"
+        latitude: "Latitude"
+        longitude: "Longitude"

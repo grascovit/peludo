@@ -53,9 +53,9 @@ class FoundPetsController < ApplicationController
       :breed_id,
       :gender,
       :description,
-      :city,
-      :state,
-      :country,
+      :address,
+      :latitude,
+      :longitude,
       pictures: []
     )
   end

@@ -9,7 +9,7 @@ class Pet < ApplicationRecord
   has_many_attached :pictures
 
   validates :age, numericality: { only_integer: true }, allow_nil: true
-  validates :situation, :city, :state, :country, presence: true
+  validates :situation, :address, :latitude, :longitude, presence: true
 
   def self.genders_for_select
     genders.keys.collect do |gender|

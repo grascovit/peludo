@@ -19,6 +19,6 @@ en:
         situations:
           found: "Found"
           lost: "Lost"
-        city: "City"
-        state: "State"
-        country: "Country"
+        address: "Address"
+        latitude: "Latitude"
+        longitude: "Longitude"

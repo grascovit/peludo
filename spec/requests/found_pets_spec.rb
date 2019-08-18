@@ -8,18 +8,18 @@ RSpec.describe 'FoundPets', type: :request do
   let(:valid_attributes) do
     {
       pet: {
-        city: 'City',
-        state: 'State',
-        country: 'Country'
+        address: 'Address',
+        latitude: '-12.123',
+        longitude: '49.123'
       }
     }
   end
   let(:invalid_attributes) do
     {
       pet: {
-        city: '',
-        state: '',
-        country: ''
+        address: '',
+        latitude: '',
+        longitude: ''
       }
     }
   end

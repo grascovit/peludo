@@ -8,9 +8,9 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.text :description
       t.references :user, foreign_key: true
       t.integer :situation
-      t.string :city, null: false, default: ''
-      t.string :state, null: false, default: ''
-      t.string :country, null: false, default: ''
+      t.string :address, null: false, default: ''
+      t.string :latitude, null: false, default: ''
+      t.string :longitude, null: false, default: ''
 
       t.timestamps
     end
