@@ -17,4 +17,24 @@ RSpec.describe Pet, type: :model do
     it { is_expected.to define_enum_for(:gender).with_values(%i[female male]) }
     it { is_expected.to define_enum_for(:situation).with_values(%i[found lost]) }
   end
+
+  describe 'scopes' do
+    describe 'default scope' do
+      it 'returns only active pets' do
+        active_pet = create(:pet, deactivated_at: nil)
+        create(:pet, deactivated_at: 1.day.ago)
+
+        expect(described_class.all).to match_array([active_pet])
+      end
+    end
+
+    describe '.with_deactivated' do
+      it 'returns active and deactivated pets' do
+        active_pet = create(:pet, deactivated_at: nil)
+        deactivated_pet = create(:pet, deactivated_at: 1.day.ago)
+
+        expect(described_class.with_deactivated).to match_array([active_pet, deactivated_pet])
+      end
+    end
+  end
 end

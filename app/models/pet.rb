@@ -11,6 +11,10 @@ class Pet < ApplicationRecord
   validates :age, numericality: { only_integer: true }, allow_nil: true
   validates :situation, :address, :latitude, :longitude, presence: true
 
+  default_scope { where(deactivated_at: nil) }
+
+  scope :with_deactivated, -> { unscope(where: :deactivated_at) }
+
   def self.genders_for_select
     genders.keys.collect do |gender|
       [I18n.t("activerecord.attributes.pet.genders.#{gender}"), gender]

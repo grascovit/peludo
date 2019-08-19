@@ -10,5 +10,5 @@ pt-BR:
         optional_password: "Deixe em branco se você não quiser alterá-la"
         required_current_password: "Precisamos para confirmar suas alterações"
         update: "Atualizar"
-        delete_account: "Apagar minha conta"
+        deactivate_account: "Desativar minha conta"
         confirmation_message: "Você tem certeza?"

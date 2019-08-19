@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_08_17_043327) do
     t.string "address", default: "", null: false
     t.string "latitude", default: "", null: false
     t.string "longitude", default: "", null: false
+    t.datetime "deactivated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["breed_id"], name: "index_pets_on_breed_id"
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_08_17_043327) do
     t.string "first_name", default: "", null: false
     t.string "last_name"
     t.string "phone_number", default: "", null: false
+    t.datetime "deactivated_at"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

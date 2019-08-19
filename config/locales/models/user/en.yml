@@ -16,3 +16,4 @@ en:
         confirmed_at: "Confirmed at"
         remember_me: "Remember me"
         reset_password_token: "Reset password token"
+        deactivated_at: "Deactivated at"
