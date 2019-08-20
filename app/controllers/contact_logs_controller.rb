@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ContactLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :fetch_contact_log, only: %i[show]
 
   def create

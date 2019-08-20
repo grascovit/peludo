@@ -1,0 +1,14 @@
+pt-BR:
+  static_pages:
+    home:
+      subheader: "Comunidade para ajudar pessoas a encontrar seus pets desaparecidos"
+      lost_my_pet: "Perdi meu pet"
+      found_a_pet: "Encontrei um pet"
+      here: "aqui"
+      on_this_page: "nesta página"
+      lost_pet_explanation: |
+        Procure seu pet %{found_pets_link}. Caso não o encontre, por favor, cadastre-o %{new_lost_pet_link}
+        para que as pessoas possam ajudar a encontrá-lo.
+      found_pet_explanation: |
+        Veja se alguém já está o procurando %{lost_pets_link}. Caso não o encontre, por favor,
+        cadastre-o %{new_found_pet_link} para que seu tutor/tutora possa encontrá-lo.

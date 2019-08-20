@@ -1,0 +1,21 @@
+<div class="jumbotron mt-4 mb-3 home-jumbotron">
+  <h1 class="display-4 text-center"><%= t('shared.navbar.app_name') %></h1>
+  <p class="lead mt-3 text-center"><%= t('.subheader') %> &#128516;</p>
+</div>
+<div class="row">
+  <div class="col-md h-100 mx-3 my-3 p-3 text-center home-card">
+    <h4 class="mt-3"><%= t('.lost_my_pet') %> &#128531;</h4>
+    <p class="lead mt-4">
+      <%= raw t('.lost_pet_explanation',
+                found_pets_link: link_to(t('.here'), found_pets_path),
+                new_lost_pet_link: link_to(t('.on_this_page'), new_lost_pet_path)) %></p>
+  </div>
+  <div class="col-md h-100 mx-3 my-3 p-3 text-center home-card">
+    <h4 class="mt-3"><%= t('.found_a_pet') %> &#128525;</h4>
+    <p class="lead mt-4">
+      <%= raw t('.found_pet_explanation',
+                lost_pets_link: link_to(t('.here'), lost_pets_path),
+                new_found_pet_link: link_to(t('.on_this_page'), new_found_pet_path)) %>
+    </p>
+  </div>
+</div>

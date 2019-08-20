@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :found_pets
   resources :contact_logs, only: %i[create show]
 
-  root to: 'found_pets#index'
+  get :home, controller: :static_pages
+
+  root to: 'static_pages#home'
 end
