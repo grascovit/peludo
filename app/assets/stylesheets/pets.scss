@@ -1,30 +1,38 @@
-.pet-card {
-  margin-top: 2em;
-  width: 18em;
-  color: inherit;
-  max-width: 350px;
+.card-deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    text-decoration: none;
-  }
+  .pet-card {
+    margin-top: 2em;
+    width: 18em;
+    color: inherit;
+    max-width: 350px;
 
-  .pet-image {
-    height: 320px;
-  }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
 
-  .pet-header {
-    text-align: center;
-    font-size: 1.4rem;
-  }
+    .pet-image {
+      height: 320px;
+    }
 
-  .pet-description {
-    margin: 1em 0 0 0;
-    text-align: center;
-  }
+    .pet-header {
+      text-align: center;
+      font-size: 1.4rem;
+    }
 
-  .pet-registered-at {
-    text-align: center;
-    margin-bottom: 0;
+    .pet-description {
+      margin: 1em 0 0 0;
+      text-align: center;
+    }
+
+    .pet-registered-at {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
   }
 }
 
@@ -32,10 +40,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.pet-details {
-  margin-top: 1em;
+  .pet-img-thumbnail {
+    margin: 0.2em;
+    width: 160px;
+    height: 160px;
+    border-radius: 0.3em;
+  }
 }
 
 label.bold {
@@ -45,13 +56,6 @@ label.bold {
 
 .pet-info {
   margin-bottom: 1.5em;
-}
-
-.pet-img-thumbnail {
-  margin: 0 0.2em;
-  width: 160px;
-  height: 160px;
-  border-radius: 0.3em;
 }
 
 .pet-actions {
@@ -83,6 +87,7 @@ label.bold {
 .pet-last-location-map {
   width: 100%;
   height: 300px;
+  padding: 0 1em;
 }
 
 @media (max-width: 1199px) {

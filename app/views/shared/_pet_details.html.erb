@@ -1,12 +1,12 @@
-<div class="row my-4">
-  <div class="col pet-pictures">
-    <% pet.pictures.each do |picture| %>
-      <%= link_to url_for(picture), target: '_blank' do %>
-        <%= image_tag url_for(picture), class: 'pet-img-thumbnail' %>
-      <% end %>
+<div class="row my-4 pet-pictures">
+  <% pet.pictures.each do |picture| %>
+    <%= link_to url_for(picture), target: '_blank' do %>
+      <%= image_tag url_for(picture), class: 'pet-img-thumbnail' %>
     <% end %>
-  </div>
-  <div class="col pet-details">
+  <% end %>
+</div>
+<div class="row my-4">
+  <div class="col text-center">
     <label class="bold"><%= t('activerecord.attributes.pet.name') %></label>
     <p class="pet-info">
       <%= pet.safe_name %>
