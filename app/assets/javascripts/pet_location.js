@@ -7,10 +7,15 @@ function initializeLocationServices() {
     {types: ['geocode', 'establishment']}
   );
 
+  toggleSubmitButtonState({'disabled': true});
   preventFormSubmitOnEnter(addressInput);
 
   autocomplete.setFields(['geometry']);
   autocomplete.addListener('place_changed', handlePlaceSelect.bind(this, autocomplete));
+}
+
+function toggleSubmitButtonState(attributes) {
+  $('#btn-submit').attr(attributes);
 }
 
 function preventFormSubmitOnEnter(addressInput) {
@@ -47,6 +52,8 @@ function handlePlaceSelect(autocomplete) {
 
   latitudeInput.val(latitude);
   longitudeInput.val(longitude);
+
+  toggleSubmitButtonState({'disabled': false});
 
   var map = initializeMap(latitude, longitude);
   var marker = createMarker(map, latitude, longitude);
