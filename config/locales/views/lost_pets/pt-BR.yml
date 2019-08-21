@@ -16,6 +16,12 @@ pt-BR:
       header: "Cadastrar pet perdido"
       back: "Voltar aos pets perdidos"
     form:
+      name: "Nome"
+      age: "Idade em anos (opcional)"
+      breed: "Raça"
+      gender: "Sexo"
+      description: "Nos fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
+      address: "Último lugar ou endereço onde você viu o pet"
       submit: "Salvar"
     index:
       header: "Pets perdidos"

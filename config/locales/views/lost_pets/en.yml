@@ -16,6 +16,12 @@ en:
       header: "Register new lost pet"
       back: "Back to lost pets"
     form:
+      name: "Name"
+      age: "Age in years (optional)"
+      breed: "Breed"
+      gender: "Gender"
+      description: "Give us a brief description of the pet (e.g. dog with a red collar)"
+      address: "Last place or address where you have seen the pet"
       submit: "Submit"
     index:
       header: "Lost pets"

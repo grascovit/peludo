@@ -16,6 +16,11 @@ en:
       header: "Register new found pet"
       back: "Back to found pets"
     form:
+      name: "Name (if pet has any kind of identification)"
+      breed: "Breed (if you are sure about the breed)"
+      gender: "Gender (if you are sure about the gender)"
+      description: "Give us a brief description of the pet (e.g. dog with a red collar)"
+      address: "Last place or address where you have seen the pet"
       submit: "Submit"
     index:
       header: "Found pets"
