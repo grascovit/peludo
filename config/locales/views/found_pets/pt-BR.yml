@@ -19,7 +19,7 @@ pt-BR:
       name: "Nome (se o pet tem alguma identificação)"
       breed: "Raça (se você tem certeza da raça)"
       gender: "Sexo (se você tem certeza do sexo)"
-      description: "Nos fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
+      description: "Fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
       address: "Último lugar ou endereço onde você viu o pet"
       submit: "Salvar"
     index:

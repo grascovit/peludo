@@ -20,7 +20,7 @@ pt-BR:
       age: "Idade em anos (opcional)"
       breed: "Raça"
       gender: "Sexo"
-      description: "Nos fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
+      description: "Fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
       address: "Último lugar ou endereço onde você viu o pet"
       submit: "Salvar"
     index:
