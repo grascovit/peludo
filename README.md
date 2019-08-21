@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.com/grascovit/peludo.svg?token=eayXJNrAe9LbNAcpFGsz&branch=master)](https://travis-ci.com/grascovit/peludo)
+[![Build Status](https://travis-ci.org/grascovit/peludo.svg?branch=master)](https://travis-ci.org/grascovit/peludo)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8fdee5577cd89b5ba3ba/maintainability)](https://codeclimate.com/github/grascovit/peludo/maintainability)
+<a href="https://codeclimate.com/github/grascovit/peludo/test_coverage"><img src="https://api.codeclimate.com/v1/badges/8fdee5577cd89b5ba3ba/test_coverage" /></a>
 
 # Peludo
 
