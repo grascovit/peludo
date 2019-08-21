@@ -4,6 +4,7 @@
     <%= form.text_field :name,
                         autofocus: true,
                         autocomplete: 'on',
+                        required: true,
                         placeholder: t('.name'),
                         class: 'form-control' %>
   </div>
@@ -18,13 +19,13 @@
                                :id,
                                :name,
                                { include_blank: t('.breed') },
-                               { class: 'form-control' } %>
+                               { required: true, class: 'form-control' } %>
   </div>
   <div class="form-group">
     <%= form.select :gender,
                     Pet.genders_for_select,
                     { include_blank: t('.gender') },
-                    { class: 'form-control' } %>
+                    { required: true, class: 'form-control' } %>
   </div>
   <div class="form-group">
     <%= form.text_area :description,

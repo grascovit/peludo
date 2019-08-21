@@ -4,10 +4,14 @@ require 'rails_helper'
 
 RSpec.describe 'LostPets', type: :request do
   let(:user) { create(:user) }
+  let(:breed) { create(:breed) }
   let!(:pet) { create(:pet, user: user) }
   let(:valid_attributes) do
     {
       pet: {
+        name: 'Rex',
+        breed_id: breed.id,
+        gender: 'male',
         address: 'Address',
         latitude: '-12.123',
         longitude: '49.123'
@@ -17,6 +21,9 @@ RSpec.describe 'LostPets', type: :request do
   let(:invalid_attributes) do
     {
       pet: {
+        name: '',
+        breed_id: '',
+        gender: '',
         address: '',
         latitude: '',
         longitude: ''

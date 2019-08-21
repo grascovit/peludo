@@ -8,6 +8,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   has_many_attached :pictures
 
+  validates :name, :breed, :gender, presence: true, if: :lost?
   validates :age, numericality: { only_integer: true }, allow_nil: true
   validates :situation, :address, :latitude, :longitude, presence: true
 
