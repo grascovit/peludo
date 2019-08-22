@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def extract_locale_from_header
     logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-    accept_language_header = request.headers['Accept-Language']
+    accept_language_header = request.headers['Accept-Language'] || ''
     locale = accept_language_header.scan(/^[a-z]{2}/).first
     I18n.available_locales.map(&:to_s).include?(locale) ? locale : nil
   end
