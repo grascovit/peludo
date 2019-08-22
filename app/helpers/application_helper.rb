@@ -3,7 +3,7 @@
 module ApplicationHelper
   FLASH_TYPES = {
     alert: 'alert-danger',
-    notice: 'alert-primary'
+    notice: 'alert-success'
   }.freeze
 
   def flash_class(type)
