@@ -11,15 +11,15 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale(&action)
-    I18n.locale = extract_locale_from_header || I18n.default_locale
-    logger.debug "* Locale set to '#{I18n.locale}'"
+    locale = extract_locale_from_header || I18n.default_locale
     I18n.with_locale(locale, &action)
   end
 
   def extract_locale_from_header
-    logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
     accept_language_header = request.headers['Accept-Language'] || ''
-    locale = accept_language_header.scan(/^[a-z]{2}/).first
-    I18n.available_locales.map(&:to_s).include?(locale) ? locale : nil
+    user_locales = accept_language_header.scan(/[a-z]{2}-[A-Z]{2}/)
+    server_locales = I18n.available_locales.map(&:to_s)
+    
+    (user_locales & server_locales).first
   end
 end
