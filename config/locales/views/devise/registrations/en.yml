@@ -4,7 +4,7 @@ en:
       new:
         header: "New account"
         sign_up: "Sign up"
-        phone_number_placeholder: "(XX) XXXXXXXXX"
+        phone_number_placeholder: "(XX) XXXXX-XXXX"
       edit:
         header: "Edit account"
         waiting_confirmation: "Currently waiting confirmation for: "
