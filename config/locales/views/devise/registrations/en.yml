@@ -4,6 +4,7 @@ en:
       new:
         header: "New account"
         sign_up: "Sign up"
+        phone_number_placeholder: "(XX) XXXXX-XXXX"
       edit:
         header: "Edit account"
         waiting_confirmation: "Currently waiting confirmation for: "
@@ -12,3 +13,4 @@ en:
         update: "Update"
         deactivate_account: "Deactivate my account"
         confirmation_message: "Are you sure?"
+        phone_number_placeholder: "(XX) XXXXX-XXXX"

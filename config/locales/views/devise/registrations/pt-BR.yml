@@ -4,6 +4,7 @@ pt-BR:
       new:
         header: "Nova conta"
         sign_up: "Cadastrar"
+        phone_number_placeholder: "(XX) XXXXX-XXXX"
       edit:
         header: "Atualizar conta"
         waiting_confirmation: "Aguardando confirmação para: "
@@ -12,3 +13,4 @@ pt-BR:
         update: "Atualizar"
         deactivate_account: "Desativar minha conta"
         confirmation_message: "Você tem certeza?"
+        phone_number_placeholder: "(XX) XXXXX-XXXX"
