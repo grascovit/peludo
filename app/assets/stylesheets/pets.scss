@@ -90,6 +90,17 @@ label.bold {
   padding: 0 1em;
 }
 
+.pictures {
+  border: 1px solid $gray-400;
+  padding: 1em;
+  border-radius: 0.25rem;
+
+  .progress-upload {
+    display: none;
+    margin-top: 1em;
+  }
+}
+
 @media (max-width: 1199px) {
   .pet-actions {
     .btn-pet-actions {
