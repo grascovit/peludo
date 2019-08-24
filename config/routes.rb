@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'registrations',
-    sessions: 'sessions'
+    sessions: 'sessions',
+    confirmations: 'confirmations'
   }
 
   resources :lost_pets
