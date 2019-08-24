@@ -4,8 +4,14 @@ class FoundPetsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :fetch_pet, only: %i[edit update destroy]
 
+  PAGE_SIZE = 9
+
   def index
-    @pets = Pet.with_attached_pictures.where(situation: :found).decorate
+    @pets = Pet.with_attached_pictures
+               .where(situation: :found)
+               .page(params[:page])
+               .per(PAGE_SIZE)
+               .decorate
   end
 
   def show
