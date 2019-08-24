@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require 'uri'
+
+ActionMailer::Base.perform_deliveries = false
+
+user = FactoryBot.create(:user, email: 'test@test.com', password: '123456')
+user.confirm
+
+puts "-> User created with email #{user.email} and password #{user.password}"
+
+10.times do
+  pet = FactoryBot.create(:pet, user: user)
+  picture = URI.open(Faker::Avatar.image)
+  pet.pictures.attach(io: picture, filename: File.basename(picture.path))
+end
+
+puts "-> #{Pet.count} pets created"
