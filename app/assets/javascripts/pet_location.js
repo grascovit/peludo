@@ -2,16 +2,21 @@ var ENTER_KEY_CODE = 13;
 
 function initializeLocationServices() {
   var addressInput = document.getElementById('pet_address');
+  var isNewRecord = addressInput.dataset.newRecord;
   var autocomplete = new google.maps.places.Autocomplete(
     addressInput,
-    {types: ['geocode', 'establishment']}
+    { types: ['geocode', 'establishment'] }
   );
 
-  toggleSubmitButtonState({'disabled': true});
+  toggleSubmitButtonState({ 'disabled': true });
   preventFormSubmitOnEnter(addressInput);
 
   autocomplete.setFields(['geometry']);
   autocomplete.addListener('place_changed', handlePlaceSelect.bind(this, autocomplete));
+
+  if (isNewRecord === 'false') {
+    google.maps.event.trigger(autocomplete, 'place_changed');
+  }
 }
 
 function toggleSubmitButtonState(attributes) {
@@ -28,7 +33,7 @@ function preventFormSubmitOnEnter(addressInput) {
 
 function initializeMap(latitude, longitude) {
   return new google.maps.Map(document.getElementById('pet-map'), {
-    center: {lat: latitude, lng: longitude},
+    center: { lat: latitude, lng: longitude },
     zoom: 15
   });
 }
@@ -37,24 +42,27 @@ function createMarker(map, latitude, longitude) {
   return new google.maps.Marker({
     map: map,
     draggable: true,
-    position: {lat: latitude, lng: longitude}
+    position: { lat: latitude, lng: longitude }
   });
 }
 
 function handlePlaceSelect(autocomplete) {
-  var coordinates = autocomplete.getPlace().geometry.location;
-  var latitude = coordinates.lat();
-  var longitude = coordinates.lng();
   var addressInput = $('#pet_address');
   var latitudeInput = $('#pet_latitude');
   var longitudeInput = $('#pet_longitude');
   var mapDiv = $('#pet-map');
+  var isNewRecord = addressInput.data('new-record');
 
-  latitudeInput.val(latitude);
-  longitudeInput.val(longitude);
+  if (isNewRecord) {
+    var coordinates = autocomplete.getPlace().geometry.location;
+    latitudeInput.val(coordinates.lat());
+    longitudeInput.val(coordinates.lng());
+  }
 
-  toggleSubmitButtonState({'disabled': false});
+  toggleSubmitButtonState({ 'disabled': false });
 
+  var latitude = parseFloat(latitudeInput.val());
+  var longitude = parseFloat(longitudeInput.val());
   var map = initializeMap(latitude, longitude);
   var marker = createMarker(map, latitude, longitude);
 
@@ -66,7 +74,7 @@ function handlePlaceSelect(autocomplete) {
     map.panTo(newCoordinates);
     latitudeInput.val(newCoordinates.lat());
     longitudeInput.val(newCoordinates.lng());
-    geocoder.geocode({latLng: newCoordinates}, function (results) {
+    geocoder.geocode({ latLng: newCoordinates }, function (results) {
         addressInput.val(results[0].formatted_address);
       }
     );
