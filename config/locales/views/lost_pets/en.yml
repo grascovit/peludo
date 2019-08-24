@@ -22,6 +22,7 @@ en:
       gender: "Gender"
       description: "Give us a brief description of the pet (e.g. dog with a red collar)"
       address: "Last place or address where you have seen the pet"
+      picture_upload_error: "There was an error while uploading your pictures. Please try again."
       submit: "Submit"
     index:
       header: "Lost pets"
