@@ -22,6 +22,7 @@ pt-BR:
       gender: "Sexo"
       description: "Fale um pouco sobre o pet (por exemplo: cachorro com coleira vermelha)"
       address: "Último lugar ou endereço onde você viu o pet"
+      picture_upload_error: "Ocorreu um erro durante o upload das imagens. Por favor, tente novamente."
       submit: "Salvar"
     index:
       header: "Pets perdidos"
