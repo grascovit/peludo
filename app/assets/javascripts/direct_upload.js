@@ -22,6 +22,8 @@ addEventListener('direct-upload:error', function (event) {
     hideAfter: 5000,
     icon: 'error'
   });
+
+  toggleButtonState('#btn-submit', { 'disabled': false });
 });
 
 addEventListener('direct-upload:end', function (event) {

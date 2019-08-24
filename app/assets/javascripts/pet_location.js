@@ -8,7 +8,7 @@ function initializeLocationServices() {
     { types: ['geocode', 'establishment'] }
   );
 
-  toggleSubmitButtonState({ 'disabled': true });
+  toggleButtonState('#btn-submit', { 'disabled': true });
   preventFormSubmitOnEnter(addressInput);
 
   autocomplete.setFields(['geometry']);
@@ -17,10 +17,6 @@ function initializeLocationServices() {
   if (isNewRecord === 'false') {
     google.maps.event.trigger(autocomplete, 'place_changed');
   }
-}
-
-function toggleSubmitButtonState(attributes) {
-  $('#btn-submit').attr(attributes);
 }
 
 function preventFormSubmitOnEnter(addressInput) {
@@ -59,7 +55,7 @@ function handlePlaceSelect(autocomplete) {
     longitudeInput.val(coordinates.lng());
   }
 
-  toggleSubmitButtonState({ 'disabled': false });
+  toggleButtonState('#btn-submit', { 'disabled': false });
 
   var latitude = parseFloat(latitudeInput.val());
   var longitude = parseFloat(longitudeInput.val());

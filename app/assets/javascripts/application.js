@@ -8,6 +8,10 @@
 //= require jquery.toast.min
 //= require_tree .
 
+function toggleButtonState(buttonId, attributes) {
+  $(buttonId).attr(attributes);
+}
+
 $(document).ready(function () {
   $('select').select2({
     theme: 'bootstrap4',
