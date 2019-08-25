@@ -40,7 +40,7 @@
                         required: true,
                         placeholder: t('.address'),
                         class: 'form-control',
-                        data: { 'new-record' => pet.new_record? } %>
+                        data: { 'existing-record' => pet.persisted? } %>
   </div>
   <%= form.hidden_field :latitude %>
   <%= form.hidden_field :longitude %>

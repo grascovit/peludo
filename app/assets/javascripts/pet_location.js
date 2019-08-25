@@ -2,7 +2,7 @@ var ENTER_KEY_CODE = 13;
 
 function initializeLocationServices() {
   var addressInput = document.getElementById('pet_address');
-  var isNewRecord = addressInput.dataset.newRecord;
+  var isExistingRecord = addressInput.dataset.existingRecord;
   var autocomplete = new google.maps.places.Autocomplete(
     addressInput,
     { types: ['geocode', 'establishment'] }
@@ -14,7 +14,7 @@ function initializeLocationServices() {
   autocomplete.setFields(['geometry']);
   autocomplete.addListener('place_changed', handlePlaceSelect.bind(this, autocomplete));
 
-  if (isNewRecord === 'false') {
+  if (isExistingRecord === 'true') {
     google.maps.event.trigger(autocomplete, 'place_changed');
   }
 }
@@ -47,10 +47,10 @@ function handlePlaceSelect(autocomplete) {
   var latitudeInput = $('#pet_latitude');
   var longitudeInput = $('#pet_longitude');
   var mapDiv = $('#pet-map');
-  var isNewRecord = addressInput.data('new-record');
+  var place = autocomplete.getPlace();
 
-  if (isNewRecord) {
-    var coordinates = autocomplete.getPlace().geometry.location;
+  if (place) {
+    var coordinates = place.geometry.location;
     latitudeInput.val(coordinates.lat());
     longitudeInput.val(coordinates.lng());
   }
