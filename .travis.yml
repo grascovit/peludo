@@ -6,7 +6,7 @@ addons:
   postgresql: '9.6'
 before_script:
   - yarn
-  - bundle exec rake db:setup
+  - bundle exec rake db:create db:schema:load
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
