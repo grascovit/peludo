@@ -12,9 +12,13 @@ function toggleButtonState(buttonId, attributes) {
   $(buttonId).attr(attributes);
 }
 
-$(document).ready(function () {
+function initializeSelectInputs() {
   $('select').select2({
     theme: 'bootstrap4',
     language: 'pt-BR'
   });
+}
+
+$(document).ready(function () {
+  initializeSelectInputs();
 });

@@ -21,6 +21,7 @@ en:
       gender: "Gender (if you are sure about the gender)"
       description: "Give us a brief description of the pet (e.g. dog with a red collar)"
       address: "Last place or address where you have seen the pet"
+      pictures: "Select at least two pictures"
       picture_upload_error: "There was an error while uploading your pictures. Please try again."
       submit: "Submit"
     index:
