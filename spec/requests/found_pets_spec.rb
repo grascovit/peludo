@@ -10,7 +10,11 @@ RSpec.describe 'FoundPets', type: :request do
       pet: {
         address: 'Address',
         latitude: '-12.123',
-        longitude: '49.123'
+        longitude: '49.123',
+        pictures: [
+          Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png'),
+          Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png')
+        ]
       }
     }
   end
@@ -77,13 +81,13 @@ RSpec.describe 'FoundPets', type: :request do
     end
 
     context 'with invalid params' do
-      it 'does not create a new list' do
+      it 'does not create a new pet' do
         expect do
           post found_pets_path, params: invalid_attributes
         end.not_to change(Pet, :count)
       end
 
-      it 'renders the list form again' do
+      it 'renders the pet form again' do
         post found_pets_path, params: invalid_attributes
 
         expect(response).to have_http_status(:ok)
@@ -101,7 +105,7 @@ RSpec.describe 'FoundPets', type: :request do
         }
       end
 
-      it 'updates the requested list' do
+      it 'updates the requested pet' do
         expect do
           put found_pet_path(pet), params: new_attributes
           pet.reload

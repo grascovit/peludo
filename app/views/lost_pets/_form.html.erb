@@ -41,17 +41,25 @@
     <%= form.file_field :pictures,
                         multiple: true,
                         direct_upload: true,
-                        required: pet.pictures.empty?,
                         accept: 'image/*',
-                        data: { 'picture-upload-error-message' => t('.picture_upload_error') } %>
+                        data: {
+                            'pictures-upload-error' => t('.pictures_upload_error'),
+                            'pictures-invalid-type-error' => t('.pictures_invalid_type'),
+                            'min-pictures-count' => Pet::MIN_PICTURES_COUNT,
+                            'max-pictures-count' => Pet::MAX_PICTURES_COUNT,
+                            'pictures-out-of-range-error' => t(
+                                '.pictures_out_of_range',
+                                min: Pet::MIN_PICTURES_COUNT,
+                                max: Pet::MAX_PICTURES_COUNT
+                            )
+                        } %>
   </div>
   <div class="form-group">
     <%= form.text_field :address,
                         autocomplete: 'off',
                         required: true,
                         placeholder: t('.address'),
-                        class: 'form-control',
-                        data: { 'existing-record' => pet.persisted? } %>
+                        class: 'form-control' %>
   </div>
   <%= form.hidden_field :latitude %>
   <%= form.hidden_field :longitude %>

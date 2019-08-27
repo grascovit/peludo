@@ -1,0 +1,5 @@
+en:
+  errors:
+    messages:
+      content_type_invalid: "possuem um formato não permitido"
+      limit_out_of_range: "estão fora da quantidade esperada (mín. %{min} e máx. %{max})"

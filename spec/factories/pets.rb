@@ -12,5 +12,11 @@ FactoryBot.define do
     longitude { Faker::Address.longitude }
     breed { |breed| Breed.find_or_initialize_by(name: breed.name) }
     user
+    pictures do
+      [
+        Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png'),
+        Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png')
+      ]
+    end
   end
 end

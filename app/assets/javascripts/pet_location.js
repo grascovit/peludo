@@ -1,8 +1,8 @@
 var ENTER_KEY_CODE = 13;
+var MAP_ZOOM_LEVEL = 15;
 
 function initializeLocationServices() {
   var addressInput = document.getElementById('pet_address');
-  var isExistingRecord = addressInput.dataset.existingRecord;
   var autocomplete = new google.maps.places.Autocomplete(
     addressInput,
     { types: ['geocode', 'establishment'] }
@@ -14,9 +14,7 @@ function initializeLocationServices() {
   autocomplete.setFields(['geometry']);
   autocomplete.addListener('place_changed', handlePlaceSelect.bind(this, autocomplete));
 
-  if (isExistingRecord === 'true') {
-    google.maps.event.trigger(autocomplete, 'place_changed');
-  }
+  google.maps.event.trigger(autocomplete, 'place_changed');
 }
 
 function preventFormSubmitOnEnter(addressInput) {
@@ -30,7 +28,7 @@ function preventFormSubmitOnEnter(addressInput) {
 function initializeMap(latitude, longitude) {
   return new google.maps.Map(document.getElementById('pet-map'), {
     center: { lat: latitude, lng: longitude },
-    zoom: 15
+    zoom: MAP_ZOOM_LEVEL
   });
 }
 
@@ -59,6 +57,11 @@ function handlePlaceSelect(autocomplete) {
 
   var latitude = parseFloat(latitudeInput.val());
   var longitude = parseFloat(longitudeInput.val());
+
+  if (isNaN(latitude) || isNaN(longitude)) {
+    return;
+  }
+
   var map = initializeMap(latitude, longitude);
   var marker = createMarker(map, latitude, longitude);
 

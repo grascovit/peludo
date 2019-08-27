@@ -17,7 +17,7 @@ addEventListener('direct-upload:error', function (event) {
   event.preventDefault();
 
   $.toast({
-    text: $(event.target).data('picture-upload-error-message'),
+    text: $(event.target).data('pictures-upload-error'),
     position: 'top-center',
     hideAfter: 5000,
     icon: 'error'

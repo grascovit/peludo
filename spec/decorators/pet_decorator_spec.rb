@@ -80,20 +80,8 @@ RSpec.describe PetDecorator do
 
     let(:pet) { create(:pet).decorate }
 
-    context 'when there are multiple pictures' do
-      let(:picture) { fixture_file_upload('/files/rails.png') }
-
-      it 'returns the first picture url' do
-        pet.pictures.attach(io: File.open(picture), filename: 'rails.png', content_type: 'image/png')
-
-        expect(pet_picture_url).to eq(helper.url_for(pet.pictures.first))
-      end
-    end
-
-    context 'when there are no pictures' do
-      it 'raises error' do
-        expect { pet_picture_url }.to raise_error(ActionController::UrlGenerationError)
-      end
+    it 'returns the first picture url' do
+      expect(pet_picture_url).to eq(helper.url_for(pet.pictures.first))
     end
   end
 end

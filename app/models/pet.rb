@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Pet < ApplicationRecord
+  IMAGE_TYPE = %r{\Aimage/.*\z}.freeze
+  MIN_PICTURES_COUNT = 2
+  MAX_PICTURES_COUNT = 5
+
   enum gender: %i[female male]
   enum situation: %i[found lost]
 
@@ -11,6 +15,10 @@ class Pet < ApplicationRecord
   validates :name, :breed, :gender, presence: true, if: :lost?
   validates :age, numericality: { only_integer: true }, allow_nil: true
   validates :situation, :address, :latitude, :longitude, presence: true
+  validates :pictures,
+            attached: true,
+            content_type: IMAGE_TYPE,
+            limit: { min: MIN_PICTURES_COUNT, max: MAX_PICTURES_COUNT }
 
   default_scope { where(deactivated_at: nil) }
 
