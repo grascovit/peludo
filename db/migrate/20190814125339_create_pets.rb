@@ -12,6 +12,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :latitude, null: false, default: ''
       t.string :longitude, null: false, default: ''
       t.datetime :deactivated_at
+      t.string :state
 
       t.timestamps
     end
