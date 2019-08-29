@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-class CreateThumbnailsWorker
-  include Sidekiq::Worker
-
+class CreatePetThumbnails
   THUMBNAIL_TRANSFORMATION = { resize: '320x320' }.freeze
 
-  def perform(pet_id)
-    pet = Pet.find(pet_id)
+  attr_reader :pet
 
+  def initialize(pet)
+    @pet = pet
+  end
+
+  def call
     pet.pictures.each do |picture|
       picture.variant(THUMBNAIL_TRANSFORMATION).processed
     end

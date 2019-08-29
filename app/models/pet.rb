@@ -27,6 +27,26 @@ class Pet < ApplicationRecord
 
   after_create_commit :create_thumbnails
 
+  state_machine :state, initial: :unprocessed do
+    event :process do
+      transition unprocessed: :processed
+    end
+
+    state :unprocessed do
+      def thumbnails
+        pictures
+      end
+    end
+
+    state :processed do
+      def thumbnails
+        pictures.collect do |picture|
+          picture.variant(THUMBNAIL_TRANSFORMATION)
+        end
+      end
+    end
+  end
+
   def self.genders_for_select
     genders.keys.collect do |gender|
       [I18n.t("activerecord.attributes.pet.genders.#{gender}"), gender]
@@ -34,26 +54,6 @@ class Pet < ApplicationRecord
   end
 
   def create_thumbnails
-    CreateThumbnailsWorker.perform_async(id)
-  end
-
-  state_machine :state, initial: :without_thumbnail do
-    event :process do
-      transition without_thumbnail: :with_thumbnail
-    end
-
-    state :without_thumbnail do
-      def thumbnails
-        pictures
-      end
-    end
-
-    state :with_thumbnail do
-      def thumbnails
-        pictures.collect do |picture|
-          picture.variant(THUMBNAIL_TRANSFORMATION)
-        end
-      end
-    end
+    CreatePetThumbnailsWorker.perform_async(id)
   end
 end
