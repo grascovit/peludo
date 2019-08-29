@@ -45,7 +45,7 @@
                         data: {
                             'pictures-upload-error' => t('.pictures_upload_error'),
                             'pictures-invalid-type-error' => t('.pictures_invalid_type'),
-                            'min-pictures-count' => Pet::MIN_PICTURES_COUNT,
+                            'min-pictures-count' => Pet::MIN_PICTURES_COUNT - pet.pictures.count,
                             'max-pictures-count' => Pet::MAX_PICTURES_COUNT,
                             'pictures-out-of-range-error' => t(
                                 '.pictures_out_of_range',

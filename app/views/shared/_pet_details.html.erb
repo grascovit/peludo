@@ -21,7 +21,7 @@
     </p>
     <label class="bold"><%= t('activerecord.attributes.pet.description') %></label>
     <p class="pet-info">
-      <%= pet.safe_description %>
+      <%= simple_format pet.safe_description %>
     </p>
     <label class="bold"><%= t('activerecord.attributes.pet.address') %></label>
     <p class="pet-info">
