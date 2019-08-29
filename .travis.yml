@@ -4,6 +4,8 @@ cache:
   yarn: true
 addons:
   postgresql: '9.6'
+services:
+  - redis-server
 before_script:
   - yarn
   - bundle exec rake db:create db:schema:load

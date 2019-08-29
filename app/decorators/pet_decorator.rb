@@ -24,7 +24,7 @@ class PetDecorator < Draper::Decorator
   end
 
   def picture_url
-    h.url_for(object.pictures.first)
+    h.url_for(object.thumbnails.first)
   end
 
   def path

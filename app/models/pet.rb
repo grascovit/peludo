@@ -4,6 +4,7 @@ class Pet < ApplicationRecord
   IMAGE_TYPE = %r{\Aimage/.*\z}.freeze
   MIN_PICTURES_COUNT = 2
   MAX_PICTURES_COUNT = 5
+  THUMBNAIL_TRANSFORMATION = { resize: '320x320' }.freeze
 
   enum gender: %i[female male]
   enum situation: %i[found lost]
@@ -24,9 +25,35 @@ class Pet < ApplicationRecord
 
   scope :with_deactivated, -> { unscope(where: :deactivated_at) }
 
+  after_create_commit :create_thumbnails
+
+  state_machine :state, initial: :unprocessed do
+    event :process do
+      transition unprocessed: :processed
+    end
+
+    state :unprocessed do
+      def thumbnails
+        pictures
+      end
+    end
+
+    state :processed do
+      def thumbnails
+        pictures.collect do |picture|
+          picture.variant(THUMBNAIL_TRANSFORMATION)
+        end
+      end
+    end
+  end
+
   def self.genders_for_select
     genders.keys.collect do |gender|
       [I18n.t("activerecord.attributes.pet.genders.#{gender}"), gender]
     end
+  end
+
+  def create_thumbnails
+    CreatePetThumbnailsWorker.perform_async(id)
   end
 end

@@ -20,6 +20,8 @@ gem 'pg', '~> 1.1.4'
 gem 'puma', '~> 4.1.0'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0.7'
+gem 'sidekiq', '~> 5.2.7'
+gem 'state_machines-activerecord', '~> 0.6.0'
 gem 'uglifier', '~> 4.1.20'
 
 group :development, :test do

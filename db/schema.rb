@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_08_17_043327) do
     t.string "latitude", default: "", null: false
     t.string "longitude", default: "", null: false
     t.datetime "deactivated_at"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["breed_id"], name: "index_pets_on_breed_id"
