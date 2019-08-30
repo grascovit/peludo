@@ -27,6 +27,9 @@
       font-size: 0.9em;
       margin: 1em 0 0 0;
       text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .pet-registered-at {

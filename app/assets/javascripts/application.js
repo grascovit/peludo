@@ -15,7 +15,8 @@ function toggleButtonState(buttonId, attributes) {
 function initializeSelectInputs() {
   $('select').select2({
     theme: 'bootstrap4',
-    language: 'pt-BR'
+    language: 'pt-BR',
+    width: '100%'
   });
 }
 

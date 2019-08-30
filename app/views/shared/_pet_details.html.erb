@@ -20,9 +20,7 @@
       <%= pet.safe_gender %>
     </p>
     <label class="bold"><%= t('activerecord.attributes.pet.description') %></label>
-    <p class="pet-info">
-      <%= simple_format pet.safe_description %>
-    </p>
+    <%= simple_format(pet.safe_description, class: 'pet-info') %>
     <label class="bold"><%= t('activerecord.attributes.pet.address') %></label>
     <p class="pet-info">
       <%= pet.address %>
