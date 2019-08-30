@@ -16,8 +16,8 @@ RSpec.describe 'LostPets', type: :request do
         latitude: '-12.123',
         longitude: '49.123',
         pictures: [
-          Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png'),
-          Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png')
+          Rack::Test::UploadedFile.new('spec/fixtures/files/placeholder.png', 'image/png'),
+          Rack::Test::UploadedFile.new('spec/fixtures/files/placeholder.png', 'image/png')
         ]
       }
     }

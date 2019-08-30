@@ -10,12 +10,12 @@ FactoryBot.define do
     address { Faker::Address.full_address }
     latitude { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
-    breed { |breed| Breed.find_or_initialize_by(name: breed.name) }
+    breed { Breed.find_or_initialize_by(name: Faker::Creature::Dog.breed) }
     user
     pictures do
       [
-        Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png'),
-        Rack::Test::UploadedFile.new('spec/fixtures/files/rails.png', 'image/png')
+        Rack::Test::UploadedFile.new('spec/fixtures/files/placeholder.png', 'image/png'),
+        Rack::Test::UploadedFile.new('spec/fixtures/files/placeholder.png', 'image/png')
       ]
     end
   end
