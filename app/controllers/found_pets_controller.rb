@@ -7,11 +7,7 @@ class FoundPetsController < ApplicationController
   PAGE_SIZE = 9
 
   def index
-    @pets = Pet.with_attached_pictures
-               .where(situation: :found)
-               .page(params[:page])
-               .per(PAGE_SIZE)
-               .decorate
+    @pets = PetQuery.new.filter(filter_params).decorate
   end
 
   def show
@@ -64,5 +60,16 @@ class FoundPetsController < ApplicationController
       :longitude,
       pictures: []
     )
+  end
+
+  def filter_params
+    {
+      situation: :found,
+      page: params[:page] || 1,
+      per_page: PAGE_SIZE,
+      breed_id: params[:breed_id],
+      gender: params[:gender],
+      address: params[:address]
+    }
   end
 end

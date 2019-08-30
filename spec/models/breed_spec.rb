@@ -33,4 +33,20 @@ RSpec.describe Breed, type: :model do
       end
     end
   end
+
+  describe '.for_select' do
+    let!(:pug) { create(:breed, name: 'Pug') }
+    let!(:beagle) { create(:breed, name: 'Beagle') }
+    let!(:dachshund) { create(:breed, name: 'Dachshund') }
+
+    it 'returns breeds names and ids sorted by ascending name' do
+      expect(described_class.for_select).to eq(
+        [
+          ['Beagle', beagle.id],
+          ['Dachshund', dachshund.id],
+          ['Pug', pug.id]
+        ]
+      )
+    end
+  end
 end

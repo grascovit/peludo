@@ -31,5 +31,6 @@ en:
       header: "Lost pets"
       subheader: "Unfortunately the pets below are lost. Please help us find them"
       register_new: "I've lost my pet"
+      address: "Place or address"
     shared:
       no_breed_informed: "Breed not informed"

@@ -45,4 +45,15 @@ RSpec.describe Pet, type: :model do
       end
     end
   end
+
+  describe '.genders_for_select' do
+    it 'returns genders' do
+      expect(described_class.genders_for_select).to eq(
+        [
+          [I18n.t('activerecord.attributes.pet.genders.female').to_s, 'female'],
+          [I18n.t('activerecord.attributes.pet.genders.male').to_s, 'male']
+        ]
+      )
+    end
+  end
 end

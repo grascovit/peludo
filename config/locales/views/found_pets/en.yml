@@ -30,5 +30,6 @@ en:
       header: "Found pets"
       subheader: "The pets below have been found and are looking for their guardians"
       register_new: "I've found a pet"
+      address: "Place or address"
     shared:
       no_breed_informed: "Breed not informed"
