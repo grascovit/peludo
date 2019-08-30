@@ -53,6 +53,10 @@ class Pet < ApplicationRecord
     end
   end
 
+  def self.address_for_select(situation:)
+    where(situation: situation).order(:address).pluck(:address)
+  end
+
   def create_thumbnails
     CreatePetThumbnailsWorker.perform_async(id)
   end

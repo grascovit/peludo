@@ -13,15 +13,18 @@
     </div>
     <%= form_tag(found_pets_path, method: :get) do %>
       <div class="row mt-4">
-        <div class="col-sm mt-3 mx-3 mx-sm-0">
+        <div class="col-md mt-3 mx-3 mx-md-0">
           <%= select_tag :breed_id,
-                         options_for_select(Breed.for_select, selected: params[:breed_id]),
+                         options_for_select(
+                             Breed.for_select(pet_situation: :found),
+                             selected: params[:breed_id]
+                         ),
                          {
                              include_blank: t('activerecord.models.breed.one'),
                              class: 'form-control'
                          } %>
         </div>
-        <div class="col-sm mt-3 mx-3 mx-sm-0">
+        <div class="col-md mt-3 mx-3 mx-md-0">
           <%= select_tag :gender,
                          options_for_select(Pet.genders_for_select, selected: params[:gender]),
                          {
@@ -29,11 +32,16 @@
                              class: 'form-control'
                          } %>
         </div>
-        <div class="col-sm mt-3 mx-3 mx-sm-0">
-          <%= text_field_tag :address,
-                             params[:address],
-                             placeholder: t('.address'),
-                             class: 'form-control' %>
+        <div class="col-md mt-3 mx-3 mx-md-0">
+          <%= select_tag :address,
+                         options_for_select(
+                             Pet.address_for_select(situation: :found),
+                             selected: params[:address]
+                         ),
+                         {
+                             include_blank: t('.address'),
+                             class: 'form-control'
+                         } %>
         </div>
       </div>
     <% end %>
@@ -51,5 +59,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initializeAddressFilter"></script>

@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Breed, type: :model do
+  describe 'associations' do
+    it { is_expected.to have_many(:pets) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name).case_insensitive }
@@ -39,12 +43,15 @@ RSpec.describe Breed, type: :model do
     let!(:beagle) { create(:breed, name: 'Beagle') }
     let!(:dachshund) { create(:breed, name: 'Dachshund') }
 
-    it 'returns breeds names and ids sorted by ascending name' do
-      expect(described_class.for_select).to eq(
+    it 'returns breeds sorted by ascending name for specific pet situation' do
+      create(:pet, breed: beagle, situation: :lost)
+      create(:pet, breed: dachshund, situation: :lost)
+      create(:pet, breed: pug, situation: :found)
+
+      expect(described_class.for_select(pet_situation: :lost)).to eq(
         [
           ['Beagle', beagle.id],
-          ['Dachshund', dachshund.id],
-          ['Pug', pug.id]
+          ['Dachshund', dachshund.id]
         ]
       )
     end
