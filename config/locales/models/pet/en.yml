@@ -23,3 +23,11 @@ en:
         latitude: "Latitude"
         longitude: "Longitude"
         pictures: "Pictures"
+    errors:
+      models:
+        pet:
+          attributes:
+            pictures:
+              blank: "are mandatory"
+            base:
+              latitude_or_longitude_blank: "Select a suggested place or address"

@@ -15,11 +15,12 @@ class Pet < ApplicationRecord
 
   validates :name, :breed, :gender, presence: true, if: :lost?
   validates :age, numericality: { only_integer: true }, allow_nil: true
-  validates :situation, :address, :latitude, :longitude, presence: true
+  validates :situation, :address, presence: true
   validates :pictures,
             attached: true,
             content_type: IMAGE_TYPE,
             limit: { min: MIN_PICTURES_COUNT, max: MAX_PICTURES_COUNT }
+  validate :latitude_or_longitude_blank
 
   default_scope { where(deactivated_at: nil) }
 
@@ -55,5 +56,9 @@ class Pet < ApplicationRecord
 
   def create_thumbnails
     CreatePetThumbnailsWorker.perform_async(id)
+  end
+
+  def latitude_or_longitude_blank
+    errors.add(:base, :latitude_or_longitude_blank) if latitude.blank? || longitude.blank?
   end
 end
