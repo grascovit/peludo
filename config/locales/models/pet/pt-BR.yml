@@ -23,3 +23,11 @@ pt-BR:
         latitude: "Latitude"
         longitude: "Longitude"
         pictures: "Fotos"
+    errors:
+      models:
+        pet:
+          attributes:
+            pictures:
+              blank: "são obrigatórias"
+            base:
+              latitude_or_longitude_blank: "Selecione um local ou endereço sugerido"
