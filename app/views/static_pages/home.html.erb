@@ -19,3 +19,13 @@
     </p>
   </div>
 </div>
+<div class="row">
+  <div class="col-md h-100 mx-3 my-3 p-3 text-center home-card">
+    <h4 class="mt-3"><%= t('.pets_for_adoption') %> &#129303;</h4>
+    <p class="lead mt-4">
+      <%= raw t('.pets_for_adoption_explanation',
+                pets_for_adoption_link: link_to(t('.here'), pets_for_adoption_path),
+                new_pet_for_adoption_link: link_to(t('.on_this_page'), new_pet_for_adoption_path)) %>
+    </p>
+  </div>
+</div>

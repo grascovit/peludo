@@ -4,6 +4,7 @@ en:
       subheader: "Community to help people find their lost pets"
       lost_my_pet: "I've lost my pet"
       found_a_pet: "I've found a pet"
+      pets_for_adoption: "Pets for adoption"
       here: "here"
       on_this_page: "on this page"
       lost_pet_explanation: |
@@ -11,4 +12,7 @@ en:
         him/her %{new_lost_pet_link} so people can help find him/her.
       found_pet_explanation: |
         Check if someone is already looking for him/her %{lost_pets_link}. If not, please register
-        him/here %{new_found_pet_link} so his/her owner can find him/her.
+        him/her %{new_found_pet_link} so his/her owner can find him/her.
+      pets_for_adoption_explanation: |
+        If you are searching for a pet for adoption, please click %{pets_for_adoption_link}. If you know
+        a pet for adoption and wanted to register him/her, please register him/her %{new_pet_for_adoption_link}.
