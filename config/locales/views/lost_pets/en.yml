@@ -2,9 +2,6 @@ en:
   lost_pets:
     show:
       back: "Back to lost pets"
-      no_name_informed: "Name not informed"
-      no_gender_informed: "Gender not informed"
-      no_description_given: "No description given"
       see_contact_info: "See contact info"
       edit: "Edit pet details"
       delete: "Remove pet from database"
@@ -32,5 +29,3 @@ en:
       subheader: "Unfortunately the pets below are lost. Please help us find them"
       register_new: "I've lost my pet"
       address: "Place or address"
-    shared:
-      no_breed_informed: "Breed not informed"

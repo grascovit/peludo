@@ -32,5 +32,3 @@ en:
       subheader: "The pets below are looking for a home"
       register_new: "I want to register a pet for adoption"
       address: "Place or address"
-    shared:
-      no_breed_informed: "Breed not informed"

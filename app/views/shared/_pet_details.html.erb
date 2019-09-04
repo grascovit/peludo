@@ -11,6 +11,10 @@
     <p class="pet-info">
       <%= pet.safe_name %>
     </p>
+    <label class="bold"><%= t('activerecord.attributes.pet.age') %></label>
+    <p class="pet-info">
+      <%= pet.safe_age %>
+    </p>
     <label class="bold"><%= t('activerecord.attributes.pet.breed') %></label>
     <p class="pet-info">
       <%= pet.safe_breed %>

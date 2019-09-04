@@ -17,7 +17,7 @@ RSpec.describe PetDecorator do
     context 'when pet has no name' do
       let(:name) { '' }
 
-      it { is_expected.to eq(I18n.t('lost_pets.show.no_name_informed')) }
+      it { is_expected.to eq(I18n.t('shared.pet_details.no_name_informed')) }
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe PetDecorator do
     context "when pet doesn't have a breed" do
       let(:breed) { nil }
 
-      it { is_expected.to eq(I18n.t('lost_pets.shared.no_breed_informed')) }
+      it { is_expected.to eq(I18n.t('shared.pet_details.no_breed_informed')) }
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe PetDecorator do
     context 'when pet has no gender' do
       let(:gender) { '' }
 
-      it { is_expected.to eq(I18n.t('lost_pets.show.no_gender_informed')) }
+      it { is_expected.to eq(I18n.t('shared.pet_details.no_gender_informed')) }
     end
   end
 
@@ -71,7 +71,7 @@ RSpec.describe PetDecorator do
     context 'when pet has no description' do
       let(:description) { '' }
 
-      it { is_expected.to eq(I18n.t('lost_pets.show.no_description_given')) }
+      it { is_expected.to eq(I18n.t('shared.pet_details.no_description_given')) }
     end
   end
 

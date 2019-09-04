@@ -2,3 +2,8 @@ pt-BR:
   shared:
     pet_details:
       registered_at: "Cadastrado em"
+      no_name_informed: "Nome não informado"
+      no_age_informed: "Idade não informada"
+      no_breed_informed: "Raça não informada"
+      no_gender_informed: "Sexo não informado"
+      no_description_given: "Nenhuma descrição fornecida"

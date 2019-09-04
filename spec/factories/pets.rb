@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :pet do
     name { Faker::Creature::Dog.name }
-    age { Faker::Creature::Dog.age.to_i }
+    age { rand(1..15) }
     gender { Pet.genders.keys.sample }
     description { Faker::Lorem.paragraph }
     situation { Pet.situations.keys.sample }

@@ -2,9 +2,6 @@ pt-BR:
   lost_pets:
     show:
       back: "Voltar aos pets perdidos"
-      no_name_informed: "Nome não informado"
-      no_gender_informed: "Sexo não informado"
-      no_description_given: "Nenhuma descrição fornecida"
       see_contact_info: "Ver informações de contato"
       edit: "Atualizar informações do pet"
       delete: "Remover pet do banco de dados"
@@ -32,5 +29,3 @@ pt-BR:
       subheader: "Infelizmente os bichinhos abaixo estão desaparecidos. Por favor, nos ajude a encontrá-los"
       register_new: "Perdi meu pet"
       address: "Local ou endereço"
-    shared:
-      no_breed_informed: "Raça não informada"

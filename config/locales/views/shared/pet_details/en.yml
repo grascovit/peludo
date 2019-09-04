@@ -2,3 +2,8 @@ en:
   shared:
     pet_details:
       registered_at: "Registered at"
+      no_name_informed: "Name not informed"
+      no_age_informed: "Age not informed"
+      no_breed_informed: "Breed not informed"
+      no_gender_informed: "Gender not informed"
+      no_description_given: "No description given"
