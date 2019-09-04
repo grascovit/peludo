@@ -1,7 +1,7 @@
 en:
-  found_pets:
+  pets_for_adoption:
     show:
-      back: "Back to found pets"
+      back: "Back to pets for adoption"
       no_name_informed: "Name not informed"
       no_gender_informed: "Gender not informed"
       no_description_given: "No description given"
@@ -11,15 +11,16 @@ en:
       confirmation_message: "Are you sure?"
     edit:
       header: "Edit pet"
-      back: "Back to found pets"
+      back: "Back to pets for adoption"
     new:
-      header: "Register new found pet"
-      back: "Back to found pets"
+      header: "Register new pet for adoption"
+      back: "Back to pets for adoption"
     form:
-      name: "Name (if pet has any kind of identification)"
-      breed: "Breed (if you are sure about the breed)"
-      gender: "Gender (if you are sure about the gender)"
-      description: "Give us a brief description of the pet (e.g. dog with a red collar)"
+      name: "Name"
+      age: "Age in years (optional)"
+      breed: "Breed"
+      gender: "Gender"
+      description: "Give us a brief description of the pet (e.g. docile dog, likes other dogs too)"
       address: "Last place or address where you have seen the pet"
       pictures: "Select at least two pictures"
       pictures_upload_error: "There was an error while uploading your pictures. Please try again."
@@ -27,9 +28,9 @@ en:
       pictures_invalid_type: "You must select only pictures (e.g. PNG, JPEG)"
       submit: "Submit"
     index:
-      header: "Found pets"
-      subheader: "The pets below have been found and are looking for their guardians"
-      register_new: "I've found a pet"
+      header: "Pets for adoption"
+      subheader: "The pets below are looking for a home"
+      register_new: "I want to register a pet for adoption"
       address: "Place or address"
     shared:
       no_breed_informed: "Breed not informed"

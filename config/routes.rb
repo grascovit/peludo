@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :lost_pets
   resources :found_pets
+  resources :pets_for_adoption
   resources :contact_logs, only: %i[create show]
 
   get :home, controller: :static_pages

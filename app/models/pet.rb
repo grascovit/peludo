@@ -7,13 +7,13 @@ class Pet < ApplicationRecord
   THUMBNAIL_TRANSFORMATION = { resize: '320x320' }.freeze
 
   enum gender: %i[female male]
-  enum situation: %i[found lost]
+  enum situation: %i[found lost for_adoption]
 
   belongs_to :breed, optional: true
   belongs_to :user
   has_many_attached :pictures
 
-  validates :name, :breed, :gender, presence: true, if: :lost?
+  validates :name, :breed, :gender, presence: true, if: :lost? || :for_adoption?
   validates :age, numericality: { only_integer: true }, allow_nil: true
   validates :situation, :address, presence: true
   validates :pictures,
@@ -52,6 +52,10 @@ class Pet < ApplicationRecord
     genders.keys.collect do |gender|
       [I18n.t("activerecord.attributes.pet.genders.#{gender}"), gender]
     end
+  end
+
+  def self.address_for_select(situation:)
+    where(situation: situation).order(:address).pluck(:address)
   end
 
   def create_thumbnails

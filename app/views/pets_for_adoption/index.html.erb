@@ -5,18 +5,18 @@
         <%= t('.header') %>
       </h4>
       <h6>
-        <%= t('.subheader') %><span class="emoji">&#128270;</span>
+        <%= t('.subheader') %><span class="emoji">&#128521;</span>
       </h6>
-      <%= link_to new_found_pet_path, class: 'btn btn-sm btn-primary btn-found-a-pet mt-3' do %>
-        <%= t('.register_new') %><span class="emoji emoji-sm">&#128525;</span>
+      <%= link_to new_pet_for_adoption_path, class: 'btn btn-sm btn-primary btn-pet-for-adoption mt-3' do %>
+        <%= t('.register_new') %><span class="emoji emoji-sm">&#128522;</span>
       <% end %>
     </div>
-    <%= form_tag(found_pets_path, method: :get) do %>
+    <%= form_tag(pets_for_adoption_path, method: :get) do %>
       <div class="row mt-4">
         <div class="col-md mt-3 mx-3 mx-md-0">
           <%= select_tag :breed_id,
                          options_for_select(
-                             Breed.for_select(pet_situation: :found),
+                             Breed.for_select(pet_situation: :for_adoption),
                              selected: params[:breed_id]
                          ),
                          {
@@ -35,7 +35,7 @@
         <div class="col-md mt-3 mx-3 mx-md-0">
           <%= select_tag :address,
                          options_for_select(
-                             Pet.address_for_select(situation: :found),
+                             Pet.address_for_select(situation: :for_adoption),
                              selected: params[:address]
                          ),
                          {
@@ -48,7 +48,7 @@
     <% @pets.each_slice(3) do |pets| %>
       <div class="card-deck">
         <% pets.each do |pet| %>
-          <%= link_to found_pet_path(pet), class: 'card pet-card' do %>
+          <%= link_to pet_for_adoption_path(pet), class: 'card pet-card' do %>
             <%= render 'shared/pet_card', pet: pet %>
           <% end %>
         <% end %>

@@ -11,6 +11,40 @@
         <%= t('.register_new') %><span class="emoji emoji-sm">&#128531;</span>
       <% end %>
     </div>
+    <%= form_tag(lost_pets_path, method: :get) do %>
+      <div class="row mt-4">
+        <div class="col-md mt-3 mx-3 mx-md-0">
+          <%= select_tag :breed_id,
+                         options_for_select(
+                             Breed.for_select(pet_situation: :lost),
+                             selected: params[:breed_id]
+                         ),
+                         {
+                             include_blank: t('activerecord.models.breed.one'),
+                             class: 'form-control'
+                         } %>
+        </div>
+        <div class="col-md mt-3 mx-3 mx-md-0">
+          <%= select_tag :gender,
+                         options_for_select(Pet.genders_for_select, selected: params[:gender]),
+                         {
+                             include_blank: t('activerecord.attributes.pet.gender'),
+                             class: 'form-control'
+                         } %>
+        </div>
+        <div class="col-md mt-3 mx-3 mx-md-0">
+          <%= select_tag :address,
+                         options_for_select(
+                             Pet.address_for_select(situation: :lost),
+                             selected: params[:address]
+                         ),
+                         {
+                             include_blank: t('.address'),
+                             class: 'form-control'
+                         } %>
+        </div>
+      </div>
+    <% end %>
     <% @pets.each_slice(3) do |pets| %>
       <div class="card-deck">
         <% pets.each do |pet| %>

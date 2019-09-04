@@ -16,7 +16,7 @@ function initializeSelectInputs() {
   $('select').select2({
     theme: 'bootstrap4',
     language: 'pt-BR',
-    width: '100%'
+    containerCSS: { 'display': 'block' }
   });
 }
 
