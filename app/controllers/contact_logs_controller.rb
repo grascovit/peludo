@@ -7,7 +7,7 @@ class ContactLogsController < ApplicationController
   def create
     @contact_log = ContactLog.create(contact_log_params)
 
-    redirect_to contact_log_path(@contact_log), notice: t('.success')
+    redirect_to contact_log_path(@contact_log), notice: t(".#{pet.situation}.success")
   end
 
   def show; end
