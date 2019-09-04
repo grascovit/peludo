@@ -42,6 +42,29 @@ RSpec.describe Pet, type: :model do
         expect(described_class.with_deactivated).to match_array([active_pet, deactivated_pet])
       end
     end
+
+    describe '.sorted_by_creation_date' do
+      subject(:sorted_pets) { described_class.sorted_by_creation_date(order) }
+
+      let!(:pet1) { create(:pet) }
+      let!(:pet2) { create(:pet) }
+
+      context 'when sorting by ascending order' do
+        let(:order) { :asc }
+
+        it 'returns the pets in ascending order' do
+          expect(sorted_pets).to eq([pet1, pet2])
+        end
+      end
+
+      context 'when sorting by descending order' do
+        let(:order) { :desc }
+
+        it 'returns the breeds in descending order' do
+          expect(sorted_pets).to eq([pet2, pet1])
+        end
+      end
+    end
   end
 
   describe '.genders_for_select' do

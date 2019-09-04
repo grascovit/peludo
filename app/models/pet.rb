@@ -25,6 +25,7 @@ class Pet < ApplicationRecord
   default_scope { where(deactivated_at: nil) }
 
   scope :with_deactivated, -> { unscope(where: :deactivated_at) }
+  scope :sorted_by_creation_date, ->(order) { order(created_at: order) }
 
   after_create_commit :create_thumbnails
 

@@ -7,7 +7,9 @@ class FoundPetsController < ApplicationController
   PAGE_SIZE = 9
 
   def index
-    @pets = PetQuery.new.filter(filter_params).decorate
+    @pets = PetQuery.new.filter(filter_params)
+                    .sorted_by_creation_date(:desc)
+                    .decorate
   end
 
   def show
