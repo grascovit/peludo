@@ -1,0 +1,36 @@
+pt-BR:
+  pets_for_adoption:
+    show:
+      back: "Voltar aos pets para adoção"
+      no_name_informed: "Nome não informado"
+      no_gender_informed: "Sexo não informado"
+      no_description_given: "Nenhuma descrição fornecida"
+      see_contact_info: "Ver informações de contato"
+      edit: "Atualizar informações do pet"
+      delete: "Remover pet do banco de dados"
+      confirmation_message: "Você tem certeza?"
+    edit:
+      header: "Atualizar pet para adoção"
+      back: "Voltar aos pets para adoção"
+    new:
+      header: "Cadastrar pet para adoção"
+      back: "Voltar aos pets para adoção"
+    form:
+      name: "Nome"
+      age: "Idade em anos (opcional)"
+      breed: "Raça"
+      gender: "Sexo"
+      description: "Fale um pouco sobre o pet (por exemplo: dócil, se dá bem com outros pets)"
+      address: "Endereço de onde o pet está"
+      pictures: "Selecione pelo menos duas fotos"
+      pictures_upload_error: "Ocorreu um erro durante o upload das fotos. Por favor, tente novamente."
+      pictures_out_of_range: "Você deve selecionar entre %{min} e %{max} fotos"
+      pictures_invalid_type: "Você deve selecionar apenas fotos (ex: PNG, JPEG)"
+      submit: "Salvar"
+    index:
+      header: "Pets para adoção"
+      subheader: "Os pets abaixo estão procurando um novo lar"
+      register_new: "Quero cadastrar um pet para adoção"
+      address: "Local ou endereço"
+    shared:
+      no_breed_informed: "Raça não informada"

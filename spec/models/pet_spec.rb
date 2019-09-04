@@ -13,7 +13,7 @@ RSpec.describe Pet, type: :model do
     it { is_expected.to validate_presence_of(:situation) }
     it { is_expected.to validate_presence_of(:address) }
     it { is_expected.to define_enum_for(:gender).with_values(%i[female male]) }
-    it { is_expected.to define_enum_for(:situation).with_values(%i[found lost]) }
+    it { is_expected.to define_enum_for(:situation).with_values(%i[found lost for_adoption]) }
 
     context 'when pet is lost' do
       subject { build_stubbed(:pet, situation: :lost) }

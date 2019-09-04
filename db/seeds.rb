@@ -8,7 +8,7 @@ user.confirm
 
 puts "-> User created with email #{user.email} and password #{user.password}"
 
-10.times do
+20.times do
   FactoryBot.create(:pet, user: user)
 end
 

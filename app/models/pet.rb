@@ -7,13 +7,13 @@ class Pet < ApplicationRecord
   THUMBNAIL_TRANSFORMATION = { resize: '320x320' }.freeze
 
   enum gender: %i[female male]
-  enum situation: %i[found lost]
+  enum situation: %i[found lost for_adoption]
 
   belongs_to :breed, optional: true
   belongs_to :user
   has_many_attached :pictures
 
-  validates :name, :breed, :gender, presence: true, if: :lost?
+  validates :name, :breed, :gender, presence: true, if: :lost? || :for_adoption?
   validates :age, numericality: { only_integer: true }, allow_nil: true
   validates :situation, :address, presence: true
   validates :pictures,

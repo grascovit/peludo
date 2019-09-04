@@ -12,6 +12,9 @@
         <li class="nav-item <%= active_item('found_pets') %>">
           <%= link_to t('.found_pets'), found_pets_path, class: 'nav-link' %>
         </li>
+        <li class="nav-item <%= active_item('pets_for_adoption') %>">
+          <%= link_to t('.pets_for_adoption'), pets_for_adoption_path, class: 'nav-link' %>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <% if current_user %>

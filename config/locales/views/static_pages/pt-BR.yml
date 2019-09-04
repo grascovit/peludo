@@ -4,6 +4,7 @@ pt-BR:
       subheader: "Comunidade para ajudar pessoas a encontrar seus pets desaparecidos"
       lost_my_pet: "Perdi meu pet"
       found_a_pet: "Encontrei um pet"
+      pets_for_adoption: "Pets para adoção"
       here: "aqui"
       on_this_page: "nesta página"
       lost_pet_explanation: |
@@ -12,3 +13,6 @@ pt-BR:
       found_pet_explanation: |
         Veja se alguém já está procurando o pet %{lost_pets_link}. Caso não o encontre, por favor,
         cadastre-o %{new_found_pet_link} para que seu tutor/tutora possa encontrá-lo.
+      pets_for_adoption_explanation: |
+        Se você procura um pet para adotar, clique %{pets_for_adoption_link}. Caso você saiba de um pet que
+        esteja para adoção e gostaria de cadastrá-lo, por favor, cadastre-o %{new_pet_for_adoption_link}.
