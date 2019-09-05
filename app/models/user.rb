@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include DeviseTokenAuth::Concerns::User
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :trackable
+         :confirmable, :trackable, :omniauthable
 
   has_many :lost_pets, class_name: 'Pet', foreign_key: :user_id
   has_many :found_pets, class_name: 'Pet', foreign_key: :user_id

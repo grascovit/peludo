@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     confirmations: 'confirmations'
   }
 
+  namespace :api do
+    namespace :v1 do
+      mount_devise_token_auth_for 'User', at: 'auth'
+    end
+  end
+
   resources :lost_pets
   resources :found_pets
   resources :pets_for_adoption
