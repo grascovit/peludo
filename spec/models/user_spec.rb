@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
     let!(:lost_pet) { create(:pet, user: user, situation: :lost, deactivated_at: nil) }
     let!(:found_pet) { create(:pet, user: user, situation: :found, deactivated_at: nil) }
 
-    it 'deactivates user' do
+    it 'deactivates the user' do
       deactivate_user
 
       expect(user.deactivated_at).not_to be_nil
@@ -49,23 +49,32 @@ RSpec.describe User, type: :model do
   describe '#reactivate!' do
     subject(:reactivate_user) { user.reactivate! }
 
-    let!(:user) { create(:user, deactivated_at: 1.day.ago) }
     let!(:lost_pet) { create(:pet, user: user, situation: :lost, deactivated_at: 1.day.ago) }
     let!(:found_pet) { create(:pet, user: user, situation: :found, deactivated_at: 1.day.ago) }
 
-    it 'deactivates user' do
-      reactivate_user
+    context 'when user is deactivated' do
+      let(:user) { create(:user, deactivated_at: 1.day.ago) }
 
-      expect(user.deactivated_at).to be_nil
+      it 'reactivates the user' do
+        reactivate_user
+
+        expect(user.deactivated_at).to be_nil
+      end
+
+      it 'reactivates pets registered by user' do
+        reactivate_user
+        lost_pet.reload
+        found_pet.reload
+
+        expect(lost_pet.deactivated_at).to be_nil
+        expect(found_pet.deactivated_at).to be_nil
+      end
     end
 
-    it 'deactivates pets registered by user' do
-      reactivate_user
-      lost_pet.reload
-      found_pet.reload
+    context 'when user is not deactivated' do
+      let(:user) { create(:user, deactivated_at: nil) }
 
-      expect(lost_pet.deactivated_at).to be_nil
-      expect(found_pet.deactivated_at).to be_nil
+      it { is_expected.to be_nil }
     end
   end
 end

@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "id",
+        "email",
+        "provider",
+        "uid",
+        "first_name",
+        "last_name",
+        "phone_number",
+        "deactivated_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "deactivated_at": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,8 @@ class User < ApplicationRecord
   end
 
   def reactivate!
+    return unless deactivated_at?
+
     update(deactivated_at: nil)
     update_pets(deactivated_at: nil)
   end
