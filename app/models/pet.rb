@@ -30,6 +30,14 @@ class Pet < ApplicationRecord
   after_create_commit :create_thumbnails
 
   state_machine :state, initial: :unprocessed do
+    after_transition processed: :unprocessed do |pet|
+      pet.create_thumbnails
+    end
+
+    event :unprocess do
+      transition processed: :unprocessed
+    end
+
     event :process do
       transition unprocessed: :processed
     end
@@ -61,6 +69,10 @@ class Pet < ApplicationRecord
 
   def create_thumbnails
     CreatePetThumbnailsWorker.perform_async(id)
+  end
+
+  def new_attachment_callback
+    unprocess if processed?
   end
 
   def latitude_or_longitude_blank
