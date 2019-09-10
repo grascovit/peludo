@@ -17,11 +17,11 @@ class LostPetsController < ApplicationController
   end
 
   def new
-    @pet = current_user.lost_pets.build
+    @pet = current_user.pets.build
   end
 
   def create
-    @pet = current_user.lost_pets.new(pet_params)
+    @pet = current_user.pets.new(pet_params)
     @pet.situation = :lost
 
     if @pet.save
@@ -48,7 +48,7 @@ class LostPetsController < ApplicationController
   private
 
   def fetch_pet
-    @pet = current_user.lost_pets.find(params[:id]).decorate
+    @pet = current_user.pets.find(params[:id]).decorate
   end
 
   def pet_params # rubocop:disable Metrics/MethodLength

@@ -7,9 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable, :omniauthable
 
-  has_many :lost_pets, class_name: 'Pet', foreign_key: :user_id
-  has_many :found_pets, class_name: 'Pet', foreign_key: :user_id
-  has_many :pets_for_adoption, class_name: 'Pet', foreign_key: :user_id
+  has_many :pets
 
   validates :first_name, :phone_number, presence: true
 
@@ -28,7 +26,7 @@ class User < ApplicationRecord
   private
 
   def update_pets(**attributes)
-    (lost_pets.with_deactivated + found_pets.with_deactivated).each do |pet|
+    pets.with_deactivated.each do |pet|
       pet.update(attributes)
     end
   end

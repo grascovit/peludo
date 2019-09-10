@@ -17,11 +17,11 @@ class PetsForAdoptionController < ApplicationController
   end
 
   def new
-    @pet = current_user.pets_for_adoption.build
+    @pet = current_user.pets.build
   end
 
   def create
-    @pet = current_user.pets_for_adoption.new(pet_params)
+    @pet = current_user.pets.new(pet_params)
     @pet.situation = :for_adoption
 
     if @pet.save
@@ -48,7 +48,7 @@ class PetsForAdoptionController < ApplicationController
   private
 
   def fetch_pet
-    @pet = current_user.pets_for_adoption.find(params[:id]).decorate
+    @pet = current_user.pets.find(params[:id]).decorate
   end
 
   def pet_params # rubocop:disable Metrics/MethodLength
