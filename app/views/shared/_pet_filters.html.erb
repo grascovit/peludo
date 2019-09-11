@@ -1,0 +1,34 @@
+<%= form_tag(url, method: :get) do %>
+  <div class="row mt-4">
+    <div class="col-md mt-3 mx-3 mx-md-0">
+      <%= select_tag :breed_id,
+                     options_for_select(
+                         Breed.for_select(pet_situation: situation),
+                         selected: params[:breed_id]
+                     ),
+                     {
+                         include_blank: t('.breed'),
+                         class: 'form-control'
+                     } %>
+    </div>
+    <div class="col-md mt-3 mx-3 mx-md-0">
+      <%= select_tag :gender,
+                     options_for_select(Pet.genders_for_select, selected: params[:gender]),
+                     {
+                         include_blank: t('.gender'),
+                         class: 'form-control'
+                     } %>
+    </div>
+    <div class="col-md mt-3 mx-3 mx-md-0">
+      <%= select_tag :address,
+                     options_for_select(
+                         Pet.address_for_select(situation: situation),
+                         selected: params[:address]
+                     ),
+                     {
+                         include_blank: t('.address'),
+                         class: 'form-control'
+                     } %>
+    </div>
+  </div>
+<% end %>

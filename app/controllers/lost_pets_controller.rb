@@ -4,6 +4,7 @@ class LostPetsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :fetch_pet, only: %i[edit update destroy]
 
+  DEFAULT_PAGE = 1
   PAGE_SIZE = 9
 
   def index
@@ -68,7 +69,7 @@ class LostPetsController < ApplicationController
   def filter_params
     {
       situation: :lost,
-      page: params[:page] || 1,
+      page: params[:page] || DEFAULT_PAGE,
       per_page: PAGE_SIZE,
       breed_id: params[:breed_id],
       gender: params[:gender],

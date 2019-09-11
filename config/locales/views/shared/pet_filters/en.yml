@@ -1,0 +1,6 @@
+en:
+  shared:
+    pet_filters:
+      breed: "Breed"
+      gender: "Gender"
+      address: "Place or address"

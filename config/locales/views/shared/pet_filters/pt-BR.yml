@@ -1,0 +1,6 @@
+pt-BR:
+  shared:
+    pet_filters:
+      breed: "Raça"
+      gender: "Sexo"
+      address: "Local ou endereço"
