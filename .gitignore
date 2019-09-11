@@ -31,10 +31,10 @@
 *.iml
 
 # Code coverage
-coverage/
+/coverage/
 
 # Ignore application configuration
 /config/application.yml
 
 # Ignore shared folder used only on production
-shared/
+/shared/
