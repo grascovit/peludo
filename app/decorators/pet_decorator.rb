@@ -31,7 +31,14 @@ class PetDecorator < Draper::Decorator
     h.url_for(object.thumbnails.first)
   end
 
-  def path
-    object.lost? ? h.lost_pet_path(object) : h.found_pet_path(object)
+  def list_path
+    case object.situation.to_sym
+    when :lost
+      h.lost_pet_path(object)
+    when :found
+      h.found_pet_path(object)
+    when :for_adoption
+      h.pet_for_adoption_path(object)
+    end
   end
 end
