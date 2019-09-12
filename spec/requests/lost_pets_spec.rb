@@ -145,7 +145,7 @@ RSpec.describe 'LostPets', type: :request do
   end
 
   describe 'DELETE #destroy' do
-    it 'destroys the requested pet register' do
+    it 'destroys the requested pet registry' do
       expect do
         delete lost_pet_path(pet)
       end.to change(Pet, :count).by(-1)
