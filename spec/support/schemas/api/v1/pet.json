@@ -1,0 +1,87 @@
+{
+  "id": "file:/pet.json#",
+  "type": "object",
+  "required": [
+    "id",
+    "situation",
+    "address",
+    "latitude",
+    "longitude",
+    "created_at",
+    "updated_at",
+    "pictures"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "age": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "gender": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "situation": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "deactivated_at": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "pictures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "original"
+        ],
+        "properties": {
+          "original": {
+            "type": "string"
+          },
+          "thumbnail": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

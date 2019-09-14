@@ -46,7 +46,7 @@ module Api
           it 'returns user data' do
             reactivate_user
 
-            expect(response).to match_json_schema('v1/sessions_create_success')
+            expect(response).to match_json_schema('v1/session')
           end
         end
 

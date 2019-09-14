@@ -16,4 +16,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :test
   config.active_support.deprecation = :stderr
+
+  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST']
 end
