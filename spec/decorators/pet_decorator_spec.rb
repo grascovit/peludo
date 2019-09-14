@@ -2,11 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.describe PetDecorator do
-  describe '#safe_name' do
-    subject { pet.safe_name }
+RSpec.describe PetDecorator, type: :decorator do
+  include Rails.application.routes.url_helpers
 
-    let(:pet) { build_stubbed(:pet, name: name).decorate }
+  describe '#safe_name' do
+    subject { pet.decorate.safe_name }
+
+    let(:pet) { build_stubbed(:pet, name: name) }
 
     context 'when pet has a name' do
       let(:name) { 'Rex' }
@@ -22,9 +24,9 @@ RSpec.describe PetDecorator do
   end
 
   describe '#safe_breed' do
-    subject { pet.safe_breed }
+    subject { pet.decorate.safe_breed }
 
-    let(:pet) { build_stubbed(:pet, breed: breed).decorate }
+    let(:pet) { build_stubbed(:pet, breed: breed) }
 
     context 'when pet has a breed' do
       let(:breed) { build_stubbed(:breed, name: 'Dachshund') }
@@ -40,9 +42,9 @@ RSpec.describe PetDecorator do
   end
 
   describe '#safe_gender' do
-    subject { pet.safe_gender }
+    subject { pet.decorate.safe_gender }
 
-    let(:pet) { build_stubbed(:pet, gender: gender).decorate }
+    let(:pet) { build_stubbed(:pet, gender: gender) }
 
     context 'when pet has a gender' do
       let(:gender) { 'male' }
@@ -58,9 +60,9 @@ RSpec.describe PetDecorator do
   end
 
   describe '#safe_description' do
-    subject { pet.safe_description }
+    subject { pet.decorate.safe_description }
 
-    let(:pet) { build_stubbed(:pet, description: description).decorate }
+    let(:pet) { build_stubbed(:pet, description: description) }
 
     context 'when pet has a description' do
       let(:description) { 'Description' }
@@ -76,12 +78,40 @@ RSpec.describe PetDecorator do
   end
 
   describe '#picture_url' do
-    subject(:pet_picture_url) { pet.picture_url }
+    subject(:pet_picture_url) { pet.decorate.picture_url }
 
-    let(:pet) { create(:pet).decorate }
+    let(:pet) { create(:pet) }
 
     it 'returns the first picture url' do
       expect(pet_picture_url).to eq(helper.url_for(pet.pictures.first))
+    end
+  end
+
+  describe '#path' do
+    subject(:pet_path) { pet.decorate.path }
+
+    context 'when its a lost pet' do
+      let(:pet) { create(:pet, situation: :lost) }
+
+      it 'returns the path to lost pet page' do
+        expect(pet_path).to eq(lost_pet_path(pet))
+      end
+    end
+
+    context 'when its a found pet' do
+      let(:pet) { create(:pet, situation: :found) }
+
+      it 'returns the path to lost pet page' do
+        expect(pet_path).to eq(found_pet_path(pet))
+      end
+
+      context 'when its a pet for adoption' do
+        let(:pet) { create(:pet, situation: :for_adoption) }
+
+        it 'returns the path to lost pet page' do
+          expect(pet_path).to eq(pet_for_adoption_path(pet))
+        end
+      end
     end
   end
 end

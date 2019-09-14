@@ -67,6 +67,32 @@ RSpec.describe Pet, type: :model do
     end
   end
 
+  describe 'transitions' do
+    describe 'processed -> unprocessed' do
+      subject(:unprocess_pet) { pet.unprocess }
+
+      let!(:pet) { create(:pet) }
+
+      before do
+        pet.update(state: :processed)
+      end
+
+      it 'updates the pet state to unprocessed' do
+        unprocess_pet
+
+        expect(pet.state).to eq('unprocessed')
+      end
+
+      it 'calls the method to create the pet thumbnails' do
+        allow(pet).to receive(:create_thumbnails)
+
+        unprocess_pet
+
+        expect(pet).to have_received(:create_thumbnails)
+      end
+    end
+  end
+
   describe '.genders_for_select' do
     it 'returns genders' do
       expect(described_class.genders_for_select).to eq(

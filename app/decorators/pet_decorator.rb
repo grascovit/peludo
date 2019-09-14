@@ -3,6 +3,8 @@
 class PetDecorator < Draper::Decorator
   delegate_all
 
+  include Rails.application.routes.url_helpers
+
   def safe_name
     object.name.presence || I18n.t('shared.pet_details.no_name_informed')
   end
@@ -34,11 +36,11 @@ class PetDecorator < Draper::Decorator
   def path
     case object.situation.to_sym
     when :lost
-      h.lost_pet_path(object)
+      lost_pet_path(object)
     when :found
-      h.found_pet_path(object)
+      found_pet_path(object)
     when :for_adoption
-      h.pet_for_adoption_path(object)
+      pet_for_adoption_path(object)
     end
   end
 end
