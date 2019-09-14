@@ -3,14 +3,15 @@
 module Api
   module V1
     class PetsController < ApiController
+      include Pets::Filterable
+
       before_action :authenticate_user!, except: %i[index show]
       before_action :fetch_pet, only: %i[edit update destroy]
 
-      DEFAULT_PAGE = 1
-      PAGE_SIZE = 10
-
       def index
-        render json: PetQuery.new.filter(filter_params).sorted_by_creation_date(:desc)
+        render json: PetQuery.new
+                             .filter(api_filter_params)
+                             .sorted_by_creation_date(:desc)
       end
 
       def show
@@ -60,17 +61,6 @@ module Api
           :situation,
           pictures: []
         )
-      end
-
-      def filter_params
-        {
-          situation: params[:situation],
-          page: params[:page] || DEFAULT_PAGE,
-          per_page: PAGE_SIZE,
-          breed_id: params[:breed_id],
-          gender: params[:gender],
-          address: params[:address]
-        }
       end
     end
   end

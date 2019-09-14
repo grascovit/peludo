@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
       resources :breeds
       resources :pets
+
+      namespace :me do
+        resources :pets, only: %i[index]
+      end
     end
   end
 
