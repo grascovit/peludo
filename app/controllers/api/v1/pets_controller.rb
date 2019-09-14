@@ -5,9 +5,6 @@ module Api
     class PetsController < ApiController
       before_action :authenticate_user!, except: %i[index show]
       before_action :fetch_pet, only: %i[edit update destroy]
-      before_action do
-        self.namespace_for_serializer = Api::V1
-      end
 
       DEFAULT_PAGE = 1
       PAGE_SIZE = 10
@@ -32,7 +29,7 @@ module Api
 
       def update
         if @pet.update(pet_params)
-          render json: @pet, status: :ok, serializer: PetSerializer
+          render json: @pet, status: :ok
         else
           render json: @pet.errors.full_messages, status: :unprocessable_entity
         end

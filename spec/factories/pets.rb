@@ -10,7 +10,7 @@ FactoryBot.define do
     address { Faker::Address.full_address }
     latitude { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
-    breed { Breed.find_or_initialize_by(name: Faker::Creature::Dog.breed) }
+    breed
     user
     pictures do
       [

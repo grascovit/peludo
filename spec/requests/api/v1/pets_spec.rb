@@ -45,13 +45,13 @@ module Api
 
       describe 'GET #index' do
         it 'returns http success' do
-          get api_v1_pets_path, headers: user.create_new_auth_token
+          get api_v1_pets_path
 
           expect(response).to have_http_status(:ok)
         end
 
         it 'returns the pets list' do
-          get api_v1_pets_path, headers: user.create_new_auth_token
+          get api_v1_pets_path
 
           expect(response).to match_json_schema('v1/pets')
         end
@@ -59,13 +59,13 @@ module Api
 
       describe 'GET #show' do
         it 'returns http success' do
-          get api_v1_pet_path(pet), headers: user.create_new_auth_token
+          get api_v1_pet_path(pet)
 
           expect(response).to have_http_status(:ok)
         end
 
         it 'returns the pets list' do
-          get api_v1_pet_path(pet), headers: user.create_new_auth_token
+          get api_v1_pet_path(pet)
 
           expect(response).to match_json_schema('v1/pet')
         end
