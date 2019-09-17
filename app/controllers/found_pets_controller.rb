@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class FoundPetsController < ApplicationController
+  include Pets::Filterable
+
   before_action :authenticate_user!, except: %i[index show]
   before_action :fetch_pet, only: %i[edit update destroy]
 
-  DEFAULT_PAGE = 1
-  PAGE_SIZE = 9
-
   def index
     @pets = PetQuery.new
-                    .filter(filter_params)
+                    .filter(web_filter_params(situation: :found))
                     .sorted_by_creation_date(:desc)
                     .decorate
   end
@@ -64,16 +63,5 @@ class FoundPetsController < ApplicationController
       :longitude,
       pictures: []
     )
-  end
-
-  def filter_params
-    {
-      situation: :found,
-      page: params[:page] || DEFAULT_PAGE,
-      per_page: PAGE_SIZE,
-      breed_id: params[:breed_id],
-      gender: params[:gender],
-      address: params[:address]
-    }
   end
 end
