@@ -5,7 +5,7 @@ FactoryBot.define do
     name { Faker::Creature::Dog.name }
     age { rand(1..15) }
     gender { Pet.genders.keys.sample }
-    description { Faker::Lorem.paragraph }
+    description { Faker::Lorem.paragraphs }
     situation { Pet.situations.keys.sample }
     address { Faker::Address.full_address }
     latitude { Faker::Address.latitude }
