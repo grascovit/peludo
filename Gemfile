@@ -9,7 +9,7 @@ gem 'active_storage_validations', '~> 0.8.2'
 gem 'aws-sdk-s3', '~> 1.46.0', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
-gem 'devise', '~> 4.6.2'
+gem 'devise', '~> 4.7.1'
 gem 'devise_token_auth', '~> 1.1.2'
 gem 'draper', '~> 3.1.0'
 gem 'figaro', '~> 1.1.1'
