@@ -21,6 +21,10 @@ Rails.application.routes.draw do
       namespace :me do
         resources :pets, only: %i[index]
       end
+
+      namespace :omniauth do
+        post :google_oauth2
+      end
     end
   end
 

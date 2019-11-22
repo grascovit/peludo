@@ -361,6 +361,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.9.0)
   jquery-rails (~> 4.3.5)
   json_matchers (~> 0.11.1)
+  jwt (~> 2.2.1)
   kaminari (~> 1.1.1)
   letter_opener (~> 1.7.0)
   listen (~> 3.1.5)
