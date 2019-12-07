@@ -12,6 +12,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.7.1'
 gem 'devise_token_auth', '~> 1.1.2'
 gem 'draper', '~> 3.1.0'
+gem 'factory_bot_rails', '~> 5.1.1'
+gem 'faker', '~> 2.8.1'
 gem 'figaro', '~> 1.1.1'
 gem 'font-awesome-sass', '~> 5.9.0'
 gem 'jquery-rails', '~> 4.3.5'
@@ -28,7 +30,6 @@ gem 'state_machines-activerecord', '~> 0.6.0'
 gem 'uglifier', '~> 4.1.20'
 
 group :development, :test do
-  gem 'factory_bot_rails', '~> 5.0.2'
   gem 'pry', '~> 0.12.2'
   gem 'rspec-rails', '~> 3.8.2'
   gem 'rubocop', '~> 0.74.0', require: false
@@ -44,7 +45,6 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 1.7.0'
-  gem 'faker', '~> 2.1.2'
   gem 'json_matchers', '~> 0.11.1'
   gem 'shoulda-matchers', '~> 4.1.2'
   gem 'simplecov', '~> 0.17.0', require: false
