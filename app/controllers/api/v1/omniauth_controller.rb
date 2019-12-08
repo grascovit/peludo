@@ -5,6 +5,8 @@ module Api
     class OmniauthController < ApiController
       GOOGLE_OAUTH2_PROVIDER = 'google_oauth2'
 
+      before_action :validate_id_token, only: :google_oauth2
+
       def google_oauth2
         @user = User.from_omniauth(omniauth_params)
 
@@ -31,6 +33,12 @@ module Api
 
       def id_token
         @id_token ||= JWT.decode(params['id_token'], nil, false).first
+      end
+
+      def validate_id_token
+        id_token
+      rescue JWT::DecodeError
+        head :bad_request
       end
     end
   end
