@@ -29,6 +29,8 @@ class Pet < ApplicationRecord
 
   after_create_commit :create_thumbnails
 
+  acts_as_mappable lat_column_name: :latitude, lng_column_name: :longitude
+
   state_machine :state, initial: :unprocessed do
     after_transition processed: :unprocessed do |pet|
       pet.create_thumbnails

@@ -64,7 +64,7 @@ module Api
           expect(response).to have_http_status(:ok)
         end
 
-        it 'returns the pets list' do
+        it 'returns the pet' do
           get api_v1_pet_path(pet)
 
           expect(response).to match_json_schema('v1/pet')

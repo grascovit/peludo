@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 2019_09_05_013739) do
     t.bigint "user_id"
     t.integer "situation"
     t.string "address", default: "", null: false
-    t.string "latitude", default: "", null: false
-    t.string "longitude", default: "", null: false
+    t.decimal "latitude", default: "0.0", null: false
+    t.decimal "longitude", default: "0.0", null: false
     t.datetime "deactivated_at"
     t.string "state"
     t.datetime "created_at", null: false

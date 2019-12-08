@@ -78,17 +78,18 @@ RSpec.describe PetQuery, type: :query do
       end
     end
 
-    context 'when paginating pets' do
-      let!(:pet) { create(:pet) }
+    context 'when filtering by area' do
+      let!(:pet) { create(:pet, latitude: -16.703328, longitude: -49.237511) }
       let(:params) do
         {
-          page: 1,
-          per_page: 1
+          distance: 5,
+          latitude: '-16.699595',
+          longitude: '-49.238838'
         }
       end
 
-      it 'returns pet within the specified page' do
-        create(:pet)
+      it 'returns pets with specified address' do
+        create(:pet, latitude: -16.823195, longitude: -49.264531)
 
         expect(filter).to match_array([pet])
       end
