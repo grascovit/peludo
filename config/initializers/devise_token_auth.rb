@@ -54,5 +54,5 @@ DeviseTokenAuth.setup do |config|
   # config.enable_standard_devise_support = false
 
   # Use default host URL when confirming a new user account
-  config.default_confirm_success_url = ENV['DEFAULT_HOST']
+  config.default_confirm_success_url = ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
 end

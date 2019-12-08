@@ -1,0 +1,23 @@
+{
+  "name": "peludo",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

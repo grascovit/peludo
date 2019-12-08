@@ -24,7 +24,7 @@ Rails.application.configure do
   end
 
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] }
+  config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
