@@ -28,5 +28,5 @@ Rails.application.configure do
   config.assets.quiet = true
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST']
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 end
