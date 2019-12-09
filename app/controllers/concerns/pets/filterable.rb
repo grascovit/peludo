@@ -13,7 +13,10 @@ module Pets
         per_page: API_PAGE_SIZE,
         breed_id: params[:breed_id],
         gender: params[:gender],
-        address: params[:address]
+        address: params[:address],
+        distance: params[:distance],
+        latitude: params[:latitude],
+        longitude: params[:longitude]
       }
     end
 
