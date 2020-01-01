@@ -13,8 +13,9 @@ module Api
                  :pictures
 
       def pictures
-        object.pictures.zip(thumbnails).collect do |(original, thumbnail)|
+        object.pictures.zip(thumbnails).collect do |(id, original, thumbnail)|
           {
+            'id' => id,
             'original' => url_for(original),
             'thumbnail' => thumbnail ? url_for(thumbnail) : nil
           }
