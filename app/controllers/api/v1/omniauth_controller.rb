@@ -26,7 +26,8 @@ module Api
           info: {
             email: id_token['email'],
             first_name: id_token['given_name'],
-            last_name: id_token['family_name']
+            last_name: id_token['family_name'],
+            image: id_token['picture']
           }
         )
       end

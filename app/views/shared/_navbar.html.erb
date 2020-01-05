@@ -20,6 +20,9 @@
         <% if current_user %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if current_user.picture_url %>
+                <img class="img-user rounded-circle" src="<%= current_user.picture_url %>" alt="User avatar">
+              <% end %>
               <%= current_user.first_name %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

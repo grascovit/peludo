@@ -7,6 +7,7 @@
     "email",
     "phone_number",
     "onboarding_finished",
+    "picture_url",
     "provider",
     "uid",
     "token",
@@ -37,6 +38,12 @@
     },
     "onboarding_finished": {
       "type": "boolean"
+    },
+    "picture_url": {
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "provider": {
       "type": "string"
