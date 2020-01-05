@@ -9,15 +9,19 @@ module Api
 
       attributes :id, :name, :age, :gender, :description,
                  :situation, :address, :latitude, :longitude,
-                 :deactivated_at, :created_at, :updated_at,
-                 :pictures
+                 :user_phone_number, :deactivated_at, :created_at,
+                 :updated_at, :pictures
+
+      def user_phone_number
+        object.user.phone_number
+      end
 
       def pictures
         object.pictures.zip(thumbnails).collect do |(original, thumbnail)|
-          {
-            'original' => url_for(original),
-            'thumbnail' => thumbnail ? url_for(thumbnail) : nil
-          }
+          picture = {}
+          picture['original'] = picture_json(original)
+          picture['thumbnail'] = thumbnail ? picture_json(thumbnail) : {}
+          picture
         end
       end
 
@@ -25,6 +29,13 @@ module Api
 
       def thumbnails
         object.processed? ? object.thumbnails : []
+      end
+
+      def picture_json(object)
+        {
+          'id' => object.id,
+          'url' => url_for(object)
+        }
       end
     end
   end

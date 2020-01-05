@@ -7,6 +7,7 @@
     "address",
     "latitude",
     "longitude",
+    "user_phone_number",
     "created_at",
     "updated_at",
     "pictures"
@@ -51,6 +52,9 @@
     "longitude": {
       "type": "string"
     },
+    "user_phone_number": {
+      "type": "string"
+    },
     "deactivated_at": {
       "type": [
         "null",
@@ -72,13 +76,39 @@
         ],
         "properties": {
           "original": {
-            "type": "string"
+            "type": "object",
+            "required": [
+              "id",
+              "url"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
           },
           "thumbnail": {
             "type": [
-              "null",
-              "string"
-            ]
+              "object"
+            ],
+            "required": [],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
           }
         }
       }
