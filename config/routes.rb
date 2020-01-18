@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         sessions: 'api/v1/sessions'
       }
 
+      resources :attachments, only: %i[destroy]
       resources :breeds
       resources :pets
 
