@@ -33,7 +33,7 @@ module Api
 
       def picture_json(object)
         {
-          'id' => object.id,
+          'id' => object.is_a?(ActiveStorage::Attachment) ? object.id : nil,
           'url' => url_for(object)
         }
       end
