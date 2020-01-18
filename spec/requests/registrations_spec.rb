@@ -8,6 +8,46 @@ RSpec.describe 'Registrations', type: :request do
     sign_in(user)
   end
 
+  describe 'POST #create' do
+    let!(:user) { create(:user) }
+    let(:invalid_attributes) do
+      {
+        user: {
+          'first_name' => user.first_name,
+          'last_name' => user.last_name,
+          'phone_number' => user.phone_number,
+          'email' => user.email,
+          'password' => '123456',
+          'password_confirmation' => '123456'
+        }
+      }
+    end
+
+    before do
+      sign_out(user)
+    end
+
+    context 'when user already exists' do
+      it 'does not create a new user' do
+        expect do
+          post user_registration_path, params: invalid_attributes
+        end.not_to change(User, :count)
+      end
+
+      it 'redirects to the sign in page' do
+        post user_registration_path, params: invalid_attributes
+
+        expect(response).to redirect_to(new_user_session_path)
+      end
+
+      it 'renders an alert message saying the user already exists' do
+        post user_registration_path, params: invalid_attributes
+
+        expect(flash[:alert]).to be_present
+      end
+    end
+  end
+
   describe 'DELETE #destroy' do
     subject(:deactivate_user) do
       delete user_registration_path, params: { id: user.id }
