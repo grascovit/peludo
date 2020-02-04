@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "first_name",
+    "last_name",
+    "email",
+    "phone_number",
+    "onboarding_finished",
+    "picture_url",
+    "provider",
+    "uid",
+    "token",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "onboarding_finished": {
+      "type": "boolean"
+    },
+    "picture_url": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "provider": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "token": {
+      "type": "object",
+      "required": [
+        "access-token",
+        "token-type",
+        "client",
+        "expiry",
+        "uid"
+      ],
+      "properties": {
+        "access-token": {
+          "type": "string"
+        },
+        "token-type": {
+          "type": "string"
+        },
+        "client": {
+          "type": "string"
+        },
+        "expiry": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

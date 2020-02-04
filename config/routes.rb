@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'registrations',
     sessions: 'sessions',
-    confirmations: 'confirmations'
+    confirmations: 'confirmations',
+    omniauth_callbacks: 'omniauth_callbacks'
   }
 
   namespace :api do
@@ -13,6 +14,18 @@ Rails.application.routes.draw do
         registrations: 'api/v1/registrations',
         sessions: 'api/v1/sessions'
       }
+
+      resources :attachments, only: %i[destroy]
+      resources :breeds
+      resources :pets
+
+      namespace :me do
+        resources :pets, only: %i[index]
+      end
+
+      namespace :omniauth do
+        post :google_oauth2
+      end
     end
   end
 

@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'active_model_serializers', '~> 0.10.10'
 gem 'active_storage_validations', '~> 0.8.2'
 gem 'aws-sdk-s3', '~> 1.46.0', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
@@ -16,10 +17,13 @@ gem 'factory_bot_rails', '~> 5.1.1'
 gem 'faker', '~> 2.8.1'
 gem 'figaro', '~> 1.1.1'
 gem 'font-awesome-sass', '~> 5.9.0'
+gem 'geokit-rails', '~> 2.3.1'
 gem 'jquery-rails', '~> 4.3.5'
+gem 'jwt', '~> 2.2.1'
 gem 'kaminari', '~> 1.1.1'
 gem 'mini_magick', '~> 4.9.5'
 gem 'omniauth', '~> 1.9.0'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'pg', '~> 1.1.4'
 gem 'puma', '~> 4.3.1'
 gem 'rack-cors', '~> 1.0.5'

@@ -9,8 +9,8 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.integer :situation
       t.string :address, null: false, default: ''
-      t.string :latitude, null: false, default: ''
-      t.string :longitude, null: false, default: ''
+      t.numeric :latitude, null: false, default: 0
+      t.numeric :longitude, null: false, default: 0
       t.datetime :deactivated_at
       t.string :state
 

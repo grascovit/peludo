@@ -42,15 +42,17 @@
                              placeholder: t('activerecord.attributes.user.password_confirmation'),
                              class: 'form-control' %>
       </div>
-      <div class="form-group">
-        <%= f.password_field :current_password,
-                             autocomplete: 'off',
-                             placeholder: t('activerecord.attributes.user.current_password'),
-                             class: 'form-control' %>
-        <small class="form-text text-muted">
-          <%= t('.required_current_password') %>
-        </small>
-      </div>
+      <% if resource.provider == 'email' %>
+        <div class="form-group">
+          <%= f.password_field :current_password,
+                               autocomplete: 'off',
+                               placeholder: t('activerecord.attributes.user.current_password'),
+                               class: 'form-control' %>
+          <small class="form-text text-muted">
+            <%= t('.required_current_password') %>
+          </small>
+        </div>
+      <% end %>
       <div class="form-group mt-4 mb-2">
         <%= f.submit t('.update'), class: 'btn btn-sm btn-primary btn-block' %>
       </div>

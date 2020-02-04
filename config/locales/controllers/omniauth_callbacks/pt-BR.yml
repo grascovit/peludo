@@ -1,0 +1,6 @@
+pt-BR:
+  omniauth_callbacks:
+    google_oauth2:
+      failure: |
+        Não foi possível lhe autenticar usando o Google. Por favor, tente novamente ou utilize
+        nosso cadastro utilizando seu email

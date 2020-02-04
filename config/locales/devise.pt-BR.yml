@@ -42,6 +42,7 @@ pt-BR:
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para seu endereço de email. Por favor, siga o link para ativar sua conta."
       update_needs_confirmation: "Você atualizou sua conta com sucesso, mas nós precisamos verificar seu endereço de email. Por favor, cheque sua caixa de entrada e siga o link recebido."
       updated: "Sua conta foi atualizada com sucesso."
+      already_signed_up_with_google: "Você já se cadastrou usando sua conta Google. Por favor, faça login com a mesma ou resete sua senha."
     sessions:
       signed_in: "Logado com sucesso."
       signed_out: "Saiu com sucesso."

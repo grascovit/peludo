@@ -1,0 +1,4 @@
+en:
+  omniauth_callbacks:
+    google_oauth2:
+      failure: "Could not authenticate you using Google. Please try again or use our email registration."

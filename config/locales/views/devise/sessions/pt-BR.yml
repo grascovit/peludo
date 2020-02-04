@@ -4,3 +4,5 @@ pt-BR:
       new:
         header: "Login"
         login: "Login"
+        or: "ou"
+        sign_in_with_google: "Entre com sua conta Google"
