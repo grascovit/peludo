@@ -38,3 +38,7 @@
 
 # Ignore shared folder used only on production
 /shared/
+
+# Ignore rbenv vars
+.rbenv-vars
+
