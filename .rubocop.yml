@@ -16,7 +16,7 @@ Style/Documentation:
 Style/SymbolProc:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 RSpec/ExampleLength:

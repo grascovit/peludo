@@ -80,4 +80,8 @@ class Pet < ApplicationRecord
   def latitude_or_longitude_blank
     errors.add(:base, :latitude_or_longitude_blank) if latitude.blank? || longitude.blank?
   end
+
+  def deactivate!
+    update(deactivated_at: Time.current)
+  end
 end

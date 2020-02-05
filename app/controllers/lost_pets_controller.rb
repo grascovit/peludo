@@ -41,7 +41,7 @@ class LostPetsController < ApplicationController
   end
 
   def destroy
-    @pet.destroy
+    Draper.undecorate(@pet).deactivate!
 
     redirect_to lost_pets_path, notice: t('.success')
   end

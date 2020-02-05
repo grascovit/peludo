@@ -148,7 +148,8 @@ RSpec.describe 'PetsForAdoption', type: :request do
     it 'destroys the requested pet registry' do
       expect do
         delete pet_for_adoption_path(pet)
-      end.to change(Pet, :count).by(-1)
+        pet.reload
+      end.to change(pet, :deactivated_at)
     end
 
     it 'redirects to the pets for adoption page' do
