@@ -131,4 +131,16 @@ RSpec.describe Pet, type: :model do
       end
     end
   end
+
+  describe '#deactivate!' do
+    subject(:deactivate_pet) { pet.deactivate! }
+
+    let!(:pet) { create(:pet, deactivated_at: nil) }
+
+    it 'deactivates the pet' do
+      deactivate_pet
+
+      expect(pet.deactivated_at).not_to be_nil
+    end
+  end
 end

@@ -37,7 +37,7 @@ module Api
       end
 
       def destroy
-        @pet.destroy
+        @pet.deactivate!
 
         head :no_content
       end
