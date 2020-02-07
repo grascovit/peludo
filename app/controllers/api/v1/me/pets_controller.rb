@@ -4,7 +4,7 @@ module Api
   module V1
     module Me
       class PetsController < ApiController
-        include Pets::Filterable
+        include ::Pets::Filterable
 
         def index
           render json: PetQuery.new(current_user.pets)

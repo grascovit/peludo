@@ -3,7 +3,7 @@
 module Api
   module V1
     class PetsController < ApiController
-      include Pets::Filterable
+      include ::Pets::Filterable
 
       before_action :authenticate_user!, except: %i[index show]
       before_action :fetch_pet, only: %i[edit update destroy]
