@@ -26,13 +26,19 @@ Rails.application.routes.draw do
       namespace :omniauth do
         post :google_oauth2
       end
+
+      resources :pets, only: [] do
+        resources :contact_logs, only: %i[create], controller: 'pets/contact_logs'
+      end
     end
   end
 
   resources :lost_pets
   resources :found_pets
   resources :pets_for_adoption
-  resources :contact_logs, only: %i[create show]
+  resources :pets, only: [] do
+    resources :contact_logs, only: %i[create show], controller: 'pets/contact_logs'
+  end
 
   get :home, controller: :static_pages
 

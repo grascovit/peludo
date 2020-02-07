@@ -1,0 +1,6 @@
+pt-BR:
+  pets:
+    contact_logs:
+      show:
+        header: "Informações de contato"
+        back: "Voltar para os detalhes do pet"

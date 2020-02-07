@@ -13,7 +13,7 @@
                       method: :delete, class: 'btn btn-sm btn-danger btn-pet-actions' %>
         <% elsif current_user %>
           <%= link_to t('.see_contact_info'),
-                      contact_logs_path(pet_id: @pet.id),
+                      pet_contact_logs_path(@pet),
                       method: :post,
                       class: 'btn btn-sm btn-primary btn-pet-actions' %>
         <% end %>
