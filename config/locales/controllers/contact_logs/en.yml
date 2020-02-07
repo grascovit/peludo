@@ -1,9 +1,0 @@
-en:
-  contact_logs:
-    create:
-      lost:
-        success: "Thanks for helping this pet! Below you can find more information about the responsible person."
-      found:
-        success: "Awesome! You've found your pet! We are glad to help. Below you can find more information about the responsible person."
-      for_adoption:
-        success: "Thanks for the interest in adopting this pet! Below you can find more information about the responsible person."

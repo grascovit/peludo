@@ -1,0 +1,10 @@
+pt-BR:
+  pets:
+    contact_logs:
+      create:
+        lost:
+          success: "Obrigado por ajudar este pet! Abaixo você encontra mais informações sobre a pessoa responsável."
+        found:
+          success: "Que maravilha! Você encontrou seu pet! Estamos felizes em ajudar. Abaixo você encontra mais informações sobre a pessoa responsável."
+        for_adoption:
+          success: "Obrigado pelo interesse em adotar este pet! Abaixo você encontra mais informações sobre a pessoa responsável."
