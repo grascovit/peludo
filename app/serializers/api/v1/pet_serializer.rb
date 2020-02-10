@@ -10,7 +10,7 @@ module Api
       attributes :id, :name, :age, :gender, :description,
                  :situation, :address, :latitude, :longitude,
                  :user_phone_number, :deactivated_at, :created_at,
-                 :updated_at, :pictures
+                 :updated_at, :pictures, :distance
 
       def user_phone_number
         object.user.phone_number
@@ -23,6 +23,10 @@ module Api
           picture['thumbnail'] = thumbnail ? picture_json(thumbnail) : {}
           picture
         end
+      end
+
+      def distance
+        object.try(:distance)
       end
 
       private

@@ -10,7 +10,8 @@
     "user_phone_number",
     "created_at",
     "updated_at",
-    "pictures"
+    "pictures",
+    "distance"
   ],
   "properties": {
     "id": {
@@ -112,6 +113,12 @@
           }
         }
       }
+    },
+    "distance": {
+      "type": [
+        "null",
+        "number"
+      ]
     }
   }
 }
