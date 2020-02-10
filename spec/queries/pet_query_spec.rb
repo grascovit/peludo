@@ -79,19 +79,20 @@ RSpec.describe PetQuery, type: :query do
     end
 
     context 'when filtering by area' do
-      let!(:pet) { create(:pet, latitude: -16.703328, longitude: -49.237511) }
+      let!(:pet1) { create(:pet, latitude: -16.703328, longitude: -49.237511) }
+      let!(:pet2) { create(:pet, latitude: -16.706629, longitude: -49.256571) }
       let(:params) do
         {
           distance: 5,
-          latitude: '-16.699595',
-          longitude: '-49.238838'
+          latitude: '-16.704303',
+          longitude: '-49.251699'
         }
       end
 
-      it 'returns pets with specified address' do
+      it 'returns pets with specified address (closest to farthest)' do
         create(:pet, latitude: -16.823195, longitude: -49.264531)
 
-        expect(filter).to match_array([pet])
+        expect(filter).to eq([pet2, pet1])
       end
     end
   end

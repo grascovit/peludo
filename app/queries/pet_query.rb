@@ -17,6 +17,8 @@ class PetQuery
     if searching_area?(params)
       result = result.within(
         params[:distance], origin: [params[:latitude], params[:longitude]]
+      ).by_distance(
+        origin: [params[:latitude], params[:longitude]]
       )
     end
 

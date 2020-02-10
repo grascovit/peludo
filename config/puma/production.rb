@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 workers ENV.fetch('RAILS_MAX_WORKERS') { 1 }
 threads 1, 6
 environment ENV.fetch('RAILS_ENV') { 'production' }
