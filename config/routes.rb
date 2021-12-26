@@ -8,6 +8,17 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'omniauth_callbacks'
   }
 
+  if Rails.env.production?
+    Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+      ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username),
+                                                  ::Digest::SHA256.hexdigest(ENV['ADMIN_USERNAME'])) &
+        ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password),
+                                                    ::Digest::SHA256.hexdigest(ENV['ADMIN_PASSWORD']))
+    end
+  end
+
+  mount Sidekiq::Web, at: '/sidekiq'
+
   namespace :api do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
