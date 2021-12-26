@@ -1,0 +1,10 @@
+---
+:verbose: false
+:concurrency: 1
+:max_retries: 3
+:timeout: 15
+:queues:
+  - critical
+  - mailers
+  - default
+  - low
