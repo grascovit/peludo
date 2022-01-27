@@ -29,7 +29,7 @@ gem 'puma', '~> 4.3.5'
 gem 'rack-cors', '~> 1.0.5'
 gem 'rails', '~> 5.2.3'
 gem 'sass-rails', '~> 5.0.7'
-gem 'sidekiq', '~> 5.2.7'
+gem 'sidekiq', '~> 6.4.0'
 gem 'state_machines-activerecord', '~> 0.6.0'
 gem 'uglifier', '~> 4.1.20'
 
