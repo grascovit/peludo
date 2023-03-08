@@ -11,7 +11,7 @@ gem 'aws-sdk-s3', '~> 1.46.0', require: false
 gem 'bootsnap', '~> 1.4.4', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.7.1'
-gem 'devise_token_auth', '~> 1.1.2'
+gem 'devise_token_auth', '~> 1.1.3'
 gem 'dotenv-rails', '~> 2.7.6'
 gem 'draper', '~> 3.1.0'
 gem 'factory_bot_rails', '~> 5.1.1'
